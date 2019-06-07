@@ -1,0 +1,141 @@
+\section{Hebelproblem}
+The Hebel has a position betreen -2 and 2.
+\newpage
+\subsection{Asynchron Order}
+$
+A=
+\{\text{Move\_R}(agt,obj,pos) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+\{\text{Move\_L}(agt,obj,pos) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+\text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj ,
+$
+\begin{itemize}
+  \item $
+    \text{Move\_R}(obj,pos) = \langle \text{At}(obj, pos) , \text{At}(obj, pos+=1) \wedge \neg \text{At}(obj,pos) \rangle
+    $
+  \item $
+    \text{Move\_L}(obj,pos) = \langle \text{At}(obj, pos) , \text{At}(obj, pos-=1) \wedge \neg \text{At}(obj,pos) \rangle
+    $
+\end{itemize}
+$\mathcal{A}= \{Player1, Player2\}$ \\
+$\varphi^{Player1}_g = \text{At(Hebel},-2)$ \todo{das g hier muss anders} \\
+$\varphi^{Player2}_g = \text{At(Hebel},2)$ \\
+Ist dann $\varphi_g = \text{At(Hebel,L}_2) \wedge \text{At(Hebel,R}_2)$ ? \\
+$s_0 = \{\text{At(Hebel}, 0) \}$
+
+\todo{Die Spielabfolge und das Problem ausführlich formulieren}
+
+The agents here only have an incentive to move the Hebel in their direction. One possible execution would be that the agents each move the Hebel one step towards their goal and the other agent would move the Hebel back to the starting position. This is a infinite sequence which is not successful.
+
+The solution to this problem could be the introduction of a token, which gives one agent the ability to move multiple times and prevents the other agents from doing any other action.
+
+\newpage
+
+\subsection{Table Token}
+In A it is a precondition for all move objectives to have the token. There is another Task to take the token and one to give the token up. In the beginning the Token is lying on a table and an agent can just take it. \\
+$
+A=
+\{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+\{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+\{\text{Take\_Token}(agt, token) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \} \\
+\{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+\text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj ,
+$
+\begin{itemize}
+  \item $
+    \text{Move\_R}(agt,obj,pos) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+=1) \wedge \neg \text{At}(obj,pos) \rangle
+    $
+  \item $
+    \text{Move\_L}(agt,obj,pos) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-=1) \wedge \neg \text{At}(obj,pos) \rangle
+    $
+  \item $
+    \text{Take\_Token}(agt, token) = \langle \neg \text{Has}(agt, token) \wedge \text{At}(token, table), \text{Has}(agt, token) \wedge \neg  \text{At}(token, table) \rangle
+    $ \todo{Hier fehlt, dass kein Agent das Token haben darf}
+  \item $
+    \text{Give\_Token}(agt, token, otheragt) = \langle
+    \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+    \text{Has}(otheragt, token)
+    \rangle
+  $
+\end{itemize}
+
+$s_0=\{\text{At(Hebel, N)}, \text{At(Token, Table)}\}$
+\todo{Ausführung dokumentieren}
+
+Here one of the agents will take the token and complete their goal. The other agent will not be able to move until they have the token. This way the game will be able to be completed.
+
+This only works when the agents are eager.
+A lazy agent would not even pick up the token from the table because then it would have to do something. But since a lazy agent has a preference agaist its own actions the token will just stay on the table and the game would be lost.
+
+\todo{Spülmaschinenproblem?}
+
+
+\newpage
+
+\subsection{Asynchron beginning Token}
+  In A it is a precondition for all move objectives to have the token. There is another Task to take the token and one to give the token up. In the beginning it is unclear which agent has the token first. \\
+  $
+  A=
+  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj ,
+  $
+  \begin{itemize}
+    \item $
+      \text{Move\_R}(agt,obj,pos) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+=1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Move\_L}(agt,obj,pos) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-=1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Give\_Token}(agt, token, otheragt) = \langle
+      \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+      \text{Has}(otheragt, token)
+      \rangle
+    $
+  \end{itemize}
+
+  $s_0=\{\text{At(Hebel, N)}\}$
+
+  This would work for this Problem. The game is solvable in the first try. \\
+  This token strategy is always better than no token strategy because every game that is solvable with the asynchron order is also solvable with this token order. But more games that result in a deadlock like the example above will also be solvable.
+
+  But again there is the problem with lazy agents. Lazy agents would plan on not getting the token and therefore the game will be lost. A way to solve this problem could be to randomly pick an agent to get the token.
+
+  \todo{the agent has to do something before giving up the token? This is not formalized}
+
+\newpage
+
+\subsection{random beginnig Token}
+  In A it is a precondition for all move objectives to have the token. There is another Task to take the token and one to give the token up. In the beginning one agent will be choosen at random to have the token first. \\
+  $
+  A=
+  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj ,
+  $
+  \begin{itemize}
+    \item $
+      \text{Move\_R}(agt,obj,pos) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+=1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Move\_L}(agt,obj,pos) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-=1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Give\_Token}(agt, token, otheragt) = \langle
+      \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+      \text{Has}(otheragt, token)
+      \rangle
+    $
+  \end{itemize}
+
+  $s_0=\{\text{At(Hebel, N), Has(randomagent} \in \mathcal{A},\text{Token)}\}$
+
+  This way there will not be a problem with lazy agents not doing anything because they will have to plan with the option to be chosen first and then they would have to complete the game.
+
+  This will not work if the agent that is chosen at random is blocked off by other agents and not able to preform any action at all. To solve this problem we could introduce another question where all agents are first asked if they can preform an useful action.
+
+
+\subsection{better random beginnig Token}
+  The problem with this token form is when no agent is able to do anything useful. Then this way of distributing the token will not work. We could introduce another question that asks who can preform any action at all and then distribute the token at random amongst those agents.

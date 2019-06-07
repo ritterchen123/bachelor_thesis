@@ -1,0 +1,22 @@
+\chapter{Background}\label{chap:background}
+Explain the math and notation.
+
+\extend{This needs the definition} \\
+
+\section{DEL}
+DEL, or Dynamic Episthemic Logic is a specific mathmatical language used as the framework.
+Let $\mathcal{A}$ be a finite set of Agents. Let $\mathcal{P}$ be a finite set of atomic propositions.
+The epistemic language $\mathcal{L}_{\text{KC}}$ is: \\
+$$
+\varphi :== \top \ | \ \bot \ | \ p \ | \ \neg \varphi \ | \ \varphi \wedge \varphi \ | \ K_{i\varphi} \ | \ C_\varphi
+$$
+\todo{Was bedeutet das Top und bottom und warum stehen die dort?}
+
+with $p \in \mathcal{P}$ and $i \in \mathcal{A}$.
+$K_{i\varphi}$ reads as ``Agent $i$ knows $\varphi$''. $C_\varphi$ reads as ``it is common knowledge that $\varphi$ ''.
+
+Formulars are evaluated in episthemic Models
+$$
+\mathcal{M}=(W, (~_i)_{i \in \mathcal{A}}, L)
+$$
+with the domail $W$ being a nonempty finite set of worlds, $(~_i)_{i \in \mathcal{A}}$ being an equivalnce relation calle dthe indistinguishability relation for agend $i \in \mathcal{A}$ and 

@@ -1,0 +1,144 @@
+\chapter{Approach}\label{chap:approach}
+
+\section{Lever Problem}
+  The lever has a position betreen -2 and 2.\\
+  There are two players that each want to move a lever in a direction. Player 1s' goal is to move the lever to the left, to the position -2 and player 2s' goal is to move the lever to the right, to the positon 2. They do not know the other players' goal and they do not know if there is another goal than their own goal.
+
+\section{Asynchron execution order}
+  The first possibility is that the players move asynchron, seemingly random. They each have and action to move the lever to the right and to the left. In the beginning the lever is in the middle.
+
+  $
+  A=
+  \{\text{Move\_R}(agt,obj,pos) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  \{\text{Move\_L}(agt,obj,pos) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj ,
+  $
+  \begin{itemize}
+    \item $
+      \text{Move\_R}(obj,pos) = \langle \text{At}(obj, pos) , \text{At}(obj, pos+1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Move\_L}(obj,pos) = \langle \text{At}(obj, pos) , \text{At}(obj, pos-1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+  \end{itemize}
+  $\mathcal{A}= \{Player1, Player2\}$ \\
+  $\varphi^{Player1}_g = \text{At(lever},-2)$ \todo{das g hier muss anders} \\
+  $\varphi^{Player2}_g = \text{At(lever},2)$ \\
+  $\varphi_g = \text{At(lever,L}_2) \vee \text{At(lever,R}_2)$ ? \\
+  $s_0 = \{\text{At(lever}, 0) \}$
+
+  \todo{Die Spielabfolge und das Problem ausführlich formulieren}
+
+  The agents here only have an incentive to move the lever in the direction towards their own goal. One possible execution would be that the agents each move the lever one step towards their goal and the other agent would move the lever back to the starting position. This is a infinite sequence which is not successful, no player would reach any goal.
+
+  The solution to this problem could be the introduction of a token, which gives one agent the ability to preform multiple actions and prevents the other agents from preforming any action.
+
+  There are three ways to introduce a token to this game.
+  \begin{enumerate}
+    \item Tabel token - the token is lying on a table and one of the agents can take the token in the beginning.
+    \item give token - in the specification of the game it is also specified which agent will have the token in the beginning.
+    \item random token - the token is given to a random agent in the beginning. If that agent can not preform any action it can pass the token to a player who can.
+  \end{enumerate}
+
+\section{Token versions}
+
+\subsection{table token}
+  $
+  A=
+  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  \{\text{Take\_Token}(agt, token) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \} \\
+  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj , |Token| = 1
+  $
+  \begin{itemize}
+    \item $
+      \text{Move\_R}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Move\_L}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Take\_Token}(agt, token) = \langle \neg \text{Has}(agt, token) \wedge \text{At}(token, table), \text{Has}(agt, token) \wedge \neg  \text{At}(token, table) \rangle
+      $
+    \item $
+      \text{Give\_Token}(agt, token, otheragt) = \langle
+      \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+      \text{Has}(otheragt, token)
+      \rangle
+    $
+  \end{itemize}
+
+  $s_0=\{\text{At(Hebel, N)}, \text{At(Token, Table)}\}$
+
+\subsection{give Token}
+  $
+  A=
+  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj , |Token| = 1
+  $
+  \begin{itemize}
+    \item $
+      \text{Move\_R}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Move\_L}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Give\_Token}(agt, token, otheragt) = \langle
+      \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+      \text{Has}(otheragt, token)
+      \rangle
+    $
+  \end{itemize}
+
+  $s_0=\{\text{At(Hebel, N), Has(agent} \in \mathcal{A},\text{Token)}\}$
+
+\subsection{random token}
+  $
+  A=
+  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj , |Token| = 1
+  $
+  \begin{itemize}
+    \item $
+      \text{Move\_R}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Move\_L}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-1) \wedge \neg \text{At}(obj,pos) \rangle
+      $
+    \item $
+      \text{Give\_Token}(agt, token, otheragt) = \langle
+      \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+      \text{Has}(otheragt, token)
+      \rangle
+    $
+  \end{itemize}
+
+  $s_0=\{\text{At(Hebel, N), Has(randomagent} \in \mathcal{A},\text{Token)}\}$
+
+\section{TODO}
+\begin{theorem}
+Under the condition of optimal plans one can prevent infinite executions with tokens.
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+  The token prevents any other player from making a move that is not a part of an optimal plan of the first player to have the token and an optimal plan.
+\end{proof}
+
+\begin{theorem}
+If an Agent gets the token that has found a Plan, then the Game is executable in infinite executions.
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+In every version of the game if one agent has found a Plan, even if the others have not, and that agent starts executing the plan, whenever that player gives the token away the recieving player knows that the agent with the plan wants the agent to act. then the plan can be executed.
+\begin{enumerate}
+  \item Tabel token - The agent with a plan will take the token and set the plan in Motion.
+  \item give token - In the game initialization the token just has to be passed to someone who has some kind of plan. Even if that player just passes on the plan.
+  \item random token - 
+\end{enumerate}
+\end{proof}
