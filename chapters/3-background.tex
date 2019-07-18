@@ -1,22 +1,134 @@
 \chapter{Background}\label{chap:background}
-Explain the math and notation.
 
-\extend{This needs the definition} \\
+Imagine there is a lever between two players, (Anne and Bill) it is upright in the middle position and has 5 positions in total. Player one thinks the lever should be pulled two positions to her side and player two thinks the lever should be pulled two positions to his side. What do the players do? \todo{Bild malen mit Hebel}
 
 \section{DEL}
 DEL, or Dynamic Episthemic Logic is a specific mathmatical language used as the framework.
 Let $\mathcal{A}$ be a finite set of Agents. Let $\mathcal{P}$ be a finite set of atomic propositions.
 The epistemic language $\mathcal{L}_{\text{KC}}$ is: \\
 $$
-\varphi :== \top \ | \ \bot \ | \ p \ | \ \neg \varphi \ | \ \varphi \wedge \varphi \ | \ K_{i\varphi} \ | \ C_\varphi
+\varphi ::= \top \ | \ \bot \ | \ p \ | \ \neg \varphi \ | \ \varphi \wedge \varphi \ | \ K_{i\varphi} \ | \ C_\varphi
 $$
-\todo{Was bedeutet das Top und bottom und warum stehen die dort?}
 
 with $p \in \mathcal{P}$ and $i \in \mathcal{A}$.
 $K_{i\varphi}$ reads as ``Agent $i$ knows $\varphi$''. $C_\varphi$ reads as ``it is common knowledge that $\varphi$ ''.
+\draft{Let's look back at the example.} The two agents, $a$ (Anne) and $b$ (Bill) have two goal positions, goal $p$ (lever to the left) and $q$ (lever to the right). Anne knows that one goal position is the left, but does not know the other: $K_a p \vee \neg K_a \neg q$ . Bill knows that one goal position is the right, but does not know the other position: $\neg K_b \neg p \vee K_b q$.
+
 
 Formulars are evaluated in episthemic Models
 $$
-\mathcal{M}=(W, (~_i)_{i \in \mathcal{A}}, L)
+\mathcal{M}=(W, (\sim_i)_{i \in \mathcal{A}}, V)
 $$
-with the domail $W$ being a nonempty finite set of worlds, $(~_i)_{i \in \mathcal{A}}$ being an equivalnce relation calle dthe indistinguishability relation for agend $i \in \mathcal{A}$ and 
+with the domain $W$ being a nonempty finite set of worlds, $(\sim_i)_{i \in \mathcal{A}}$ being an equivalence relation called the indistinguishability relation for agent $i \in \mathcal{A}$ and $V : P \rightarrow \mathcal{P}(W)$ assigning a valuation to each atomic proposition.
+
+For $W_d \subseteq W$, the pair $(\mathcal{M}, W_d)$ is called an epistemic state (or simply a state) and the worlds of $W_d$ are called designated worlds. A state is called global if $W_d={w}$ for some world $w$ (called the actual world). We then often write $(\mathcal{M},w)$ instead of $(\mathcal{M},\{w\} )$. We use $S^{gl}(P,\mathcal{A})$ to denote the set of global states (or simply $S^{gl}$ if $P$ and $\mathcal{A}$ are clear from context). For any state $ s=(\mathcal{M}, W_d) $ we let $Globals(s)= \{ (\mathcal{M},w) | w \in W_d \} $
+The state $(\mathcal{M}, W_d)$ is called a local state for agend $i$ if $W_d$ is closed under $\sim _i$ (that is , if $w \in W_d$ and $w \sim _i v $ implies $v \in W_d$).
+Given a state $s=(\mathcal{M}, W_d)$ the associated local state of agent $i$, denoted $s^i$, is $(\mathcal{M}\{v|v\sim _i w \text{ and } w \in W_d\})$.
+
+Let $(\mathcal{M}, W_d)$ be a state on $P,\mathcal{A}$ with $\mathcal{M}=(W, (\sim_i)_{i \in \mathcal{A}}, L)$. For $i \in \mathcal{A}$, $p \in P$ and $\varphi, \psi \in \mathcal{L}_{\text{KC}}(P,\mathcal{A})$, we define truth as follows:
+\begin{align*}
+  &(\mathcal{M}, W_d) \models \varphi
+    & &\text{ iff } \qquad
+    (\mathcal{M},w)\models \varphi \text{ for all } w \in W_d \\
+  &(\mathcal{M}, w) \models p
+    & &\text{ iff } \qquad
+    p \in L(w) \\
+  &(\mathcal{M}, w) \models \neg \varphi
+    & &\text{ iff } \qquad
+    (\mathcal{M},w) \not\models \varphi \\
+  &(\mathcal{M}, w) \models \varphi \wedge \psi
+    & &\text{ iff } \qquad
+    (\mathcal{M},w) \models \varphi \text{ and } (\mathcal{M},w) \models \psi \\
+  &(\mathcal{M}, w) \models K_i \varphi
+    & &\text{ iff } \qquad
+    (\mathcal{M},v) \models \varphi \text{ for all } v \sim_i w \\
+  &(\mathcal{M}, w) \models C \varphi
+    & &\text{ iff } \qquad
+    (\mathcal{M},v) \models \varphi \text{ for all } v \sim^* w \\
+\end{align*}
+where $\sim^*$ is the transitive closure of $\bigcup_{i \in \mathcal{A}}\sim_i$. \\
+A state $(\mathcal{M}, W_d)$ is called a \textit{local state} for agent $i$ if $W_d$ is closed under $\sim_i$. Given a state $s=(\mathcal{M}, W_d)$, the \textit{associated local state} of agent $i$, denoted $s^i$, is $(\mathcal{M}, \{v|v\sim_i w \text{ and } w \in W_d\})$. Going from $s$ to $s^i$ amounts to a \textit{perspective shift} to the local perspective of agent i.
+
+\subsection{Epistemic Actions and Product Updates}
+
+An event model is $\mathcal{E} = \langle E, (\sim_i)_{i\in \mathcal{A}}, pre, \textit{eff}  \rangle$ where te domain $E$ is a non-empty finite set of events; $\sim_i \subseteq E^2$ is an equivalence relation called the indistinguishability relation for agent $i$;
+$pre:E \rightarrow \mathcal{L}_{KC}$ assigns a precondition to each event;
+and $\textit{eff}:E \rightarrow \mathcal{L}_{KC}$ assigns a postcondition, or effect to each event.
+For all $e\in E$, $\textit{eff}(e)$ is a conjunction of literals, that means anatomic propositions and their negations, including$\top$ and $\bot$.\\
+For $E_d \subseteq E$, the pair $(\mathcal{E}, E_d)$ is called an epistemic action or action and the events in $E_d$ are called a local action for agent $i$ when $E_d$ is closed under $\sim_i$. \\
+Each event of an action represents a different possible outcome.
+By using multiple events $e, e' \in E$ that are indistinguishable ($e \sim e' )$ , it is possible to model only partially observable actions.\\
+If the event model has $|E|=1$, we will write $\mathcal{E}=(pre(e), \textit{eff}(e))$.
+
+The product update is used to specify the next state resulting from preforming an action in a state.
+Let a state $s = (\mathcal{M},W_d)$ and an action $a=(\mathcal{E},E_d)$ be given with $\mathcal{M}=\langle W,(\sim_i)_{i \in \mathcal{A}}, V\rangle $ and $\mathcal{E}=\langle E, (\sim_i)_{i \in \mathcal{A}},pre, \textit{eff} \rangle$
+then the product update of $s$ with $a$ is defined as $s \otimes a = ((W'.(\sim_i')_{i \in \mathcal{A}}, W_d'))$ where :
+ \begin{itemize}
+   \item $W'=\{(w,e)\in W \times E ~|~ \mathcal{M}, w \models pre(e)\};$
+   \item $\sim_i'=\{((w,e),(w',e')) \in (W')^2 ~|~ w \sim_i w' \text{ and } e \sim_i e'\};$
+   \item $V'(p) = \{ (w,e) \in W' ~|~ \textit{eff}(e) \models p \text{ or } (\mathcal{M},w \models p \text{ and } \textit{eff}(e)\not \models \neg p)\};$
+   \item $W_d' = \{ (w,e) \in W' ~|~ w \in W_d \text{ and } e \in E_d\}$.
+ \end{itemize}
+$a=(\mathcal{E}, E_d)$ is applicable in $s=(\mathcal{M},W_d)$ if for all $w \in W_d$ there is an event $e \in E_d$ so that $(\mathcal{M},w) \models pre(e)$.
+
+\subsection{Planning tasks}
+
+
+A planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$ consists of a global state $s_0$ called the \textit{initial state}; a finite set of actions A; an owner function $\omega: A \rightarrow \mathcal{A}$; and a \textit{goal formula} $\gamma \in \mathcal{L}_{KC}$ We require that each $a \in A$ is local for $\omega(a)$.
+\extend{Definition}
+
+Consider the planning task from the beginning. For simplicity, in this example there is only one player and the lever can only be pulled once. The planning task $\langle s_0, \{ a_1 \} , \omega, p \rangle$ consists of the initial state $s_0 = $
+\begin{tikzpicture}
+  \draw (0,0) node [desig] {}; % designation
+  \draw (0,0) node[world, label=below:{$\neg p$}] (w1) {};
+\end{tikzpicture}
+with the lever being in the upright position. The action $a_1$ =
+\begin{tikzpicture}
+  \draw (0,0) node [desig] {}; % designation
+  \draw (0,0) node[world, label=below:{$e_1: \langle \top, p \rangle $}] (w1) {};
+\end{tikzpicture}
+has the owner $\omega(a_1) = 1$ player 1. Everything is fully observable for the agent. The intuitive  solution should prescribe the action $a_1$ to agent 1, pulling the lever to the right.
+
+A policy $\pi$ for $\Pi = \langle s_0, A, \omega, \gamma \rangle$ is a partial mapping $\pi: S^{gl} \hookrightarrow \mathcal{P}(A)$ so that :
+\begin{enumerate}
+  \item Applicability\\
+    We require actions to be applicable in all states they are assigned to. \\
+    for all $a \in S^{gl}, a \in \pi(s): a$ is applicable in $s$.
+  \item Uniformity \\
+    If the policy $\pi$ presscribes some action $a$ to agent $i$ in state $s$ and agent $i$ cannot distinguish $s$ from some other state $t$, then $\pi$ has to prescribe the same action $a$ for $i$ in $t$ as well. \\
+    for all $s,t \in S^{gl} $ such that $ s^{\omega(a)} = t^{\omega(a)}, a \in \pi(s): a \in \pi(t)$
+  \item Determinism \\
+    We require $\pi$ to be unambiguous for all agents in the sense that in each state $s$ where an agent $i$ is supposed to act according to $\pi$, $\pi$ will always describe the same action for agent $i$.
+\end{enumerate}
+
+The properties uniformity and applicability together imply knowledge of preconditions, the property that in each state, an agent who is supposed to preform a particular action must also know that the action is applicable in that state.
+
+We also must allow policies to sometimes prescribe multiple actions of different owners to the same state. This is because the set of indistinguishable states can differ between the agents. To characterize the different outcomes of agents ating according to a common policy, we define the notion of policy executions.
+
+An execution of a policy $\pi$ from a global state $s_0$ is a maximal (finite or infinite) sequence of alternating global states and actions $(s_0, a_1, s_1, a_2, s_2,...)$, such that for all $ m \leq 0$
+\begin{enumerate}
+  \item $a_{m+1} \in \pi(s_m)$ and
+  \item $s_{m+1} \in Globals(s_m \otimes a_{m+1})$
+\end{enumerate}
+An execution is called successful for a planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$, if it is a finite execution $(s_0, a_1, s_1,...,a_n, s_n)$ such that $s_n \models \gamma$.
+
+\todo{Do i really need this?}
+\extend{übergang} guaranteed to archieve the goal after a finite number of steps. More formally, all of their executions must be successful. As in nondeterministic planning, such policies are called strong (Cimatti et al. 2003) \todo{Quelle?}.
+
+For a planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$, a policy $\pi$ is called strong if $s_0 \in \text{Dom}(\pi) \cup \{s \in S^{gl} ~|~ s \models \gamma\}$ and for each $s \in \text{Dom}(\pi)$, any extention of $\pi$ from $s$ is successful for $\Pi$. A planning task is called solvable if a strong policy for $\Pi$ exists.
+For $ i \in \mathcal{A} $ , we call a policy $i$-strong if it is strong and  $Globals(s_0^i ) \subseteq \text{Dom}(\pi) \cup\{ s \in S^{gl} ~|~ s \models \gamma \}$.
+
+When a policy is i-strong it means that the policy is strong and defined on all the global states that agent $i$ cannot indistinguish between. It follows directly from the definition that any execution of an $i$-strong policy from any of those iniially indistinguishable states will be successful. So if agent $i$ comes up with an $i$-strong policy, agent $i$ knows the policy to be successful.
+
+Sometimes the agent cannot coordinate their plans but rather have to come up with plans indivudually. These plans can differ a lot, the agents could have different reasoning capabilities, have non-uniform knowledge of the initial state and of action outcomes. For this reason we will define a policy profile for a planning task $\Pi$ to be a family $(\pi_i)_{i \in \mathcal{A}}$ where each $\pi_i$ is a policy for $\Pi$. We assume actions to b instantaneous and executed asynchronnously. This leads to the following generalization:
+
+An execution of a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a maximal (finite or infinite) sequence of alternating global states and actions $(s_0, a_1, s_1,...)$, such that for all $m \leq 0$,
+\begin{enumerate}
+  \item $a_{m+1} \in \pi_i(s_m)$ where $i=\omega(a_{m+1})$ \\
+    Note here the source of nondeterminism as a result from the possiblity of multiple policies prescribing actions for their respective agents.
+  \item $s_{m+1} \in Globals(s_m \otimes a_{m+1}) $ \\
+    Here the source of nondeterminism is from the possibility of nondeterministic action outcomes.
+\end{enumerate}
+
+
+If all agents have one strong policy in common which all of them follow, then at execution time, the goal is guaranteed to be eventually reached. If, however, each agent acts on its individual strong policy, then the incompatibility of the individual policies may prevent the agents from reaching the goal, even tough each individual policy is strong.

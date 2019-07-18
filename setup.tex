@@ -45,6 +45,7 @@
     \usepackage{subfig}  % divide figure, e.g. 1(a), 1(b)...
     \usepackage{amsmath}  % |
     \usepackage{amsthm}   % | math, bmatrix etc
+    \usepackage{ amssymb }
     \usepackage{amsfonts} % |
     \usepackage{calc}  % calculate within LaTeX
     \usepackage[unicode=true,bookmarks=true,bookmarksnumbered=true,
@@ -128,6 +129,15 @@
 
     % ------------------- Tikz styles -------------------
     \tikzset{>=latex}  % arrow style
+
+    \tikzset{
+    world/.style={circle, fill, inner sep=1.5pt, outer sep=3pt},
+    desig/.style={circle, draw, inner sep=3pt, outer sep=3pt},
+    anchor=base, baseline}
+
+    \newcommand{\preeff}[2]{%
+    \begin{tabular}{l}pre: #1\\eff: #2\end{tabular}%
+    }
 
 
     % ------------------- algorithm ---------------------

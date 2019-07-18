@@ -1,5 +1,126 @@
 \chapter{Approach}\label{chap:approach}
 
+Lets go back to the example  from the beginning. The problem was that both agents a and b wanted to pull the lever to their own goal which results in infinite executions. This problem can be eliminated by introducing a token. With a token, only the player that has the token gets to execute an action. If the agent is done with their own actions, then they can pass the token on to the next player.
+
+\subsection{Tokens}
+
+Given a regular planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle $, the function \textit{tokenize} will transform the regular planning task into a tokenized planning task so that for all $a \in A$:
+ if $a = \langle pre, \textit{eff} \rangle$, then
+   $tokenize(a) =\langle pre \wedge has(\omega(a), token, \textit{eff})$ \\
+Former we define an Action
+    $ giveToken^{ij} = \langle has(i, token), \neg has(i, token) \wedge has (j, token) \rangle $
+    for all $i,j \in \mathcal{A}$ \\
+Then $ A^{Token}=\{tokenize(a)|a \in A\} \cup \{giveToken^{ij}|i,j \in \mathcal{A}, i \not = j\}
+$ \\
+Moreover: $\omega^{Token}(tokenize(a))= \omega(a)$ for all $a \in A$,
+and $\omega^{Token}(giveToken^{ij}) = i$ for all $i,j \in \mathcal{A}$. \\
+Then $ \Pi^{\text{Token}} = \langle s_0, A ^{\text{Token}}, \omega ^{\text{Token}}, \gamma \rangle $
+\todo{Beschreibung fehlt}
+
+\begin{theorem}
+Under the condition of optimal plans one can prevent the apperance of infinite executions in solvable games with asynchron execution order with the introduction of a token based execution order.
+\end{theorem}
+
+\begin{proof}[proof sketch]
+  The game is finished when the Agend that has the token reaches a goal state. When an agend that has a plan with the subjective cost of $n+m, m \leq 1$, that agent will start executing that plan and if needed, hand over the token to the next player. The agend will always decrease the subjective cost to n because handing over the token will also decrease the subjective cost. Because every agent decreases the subjective cost, the game is executable in infinite executions.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+A deadlock for a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a global state such that
+\begin{enumerate}
+  \item $s$ is not a goal state
+  \item $s \in \text{Dom}(\pi_i)$ for some $i \in \mathcal{A}$
+  \item $\omega(a) \neq i$
+\end{enumerate}
+for all $i \in \mathcal{A}$ and $a \in \pi_i(s)$
+
+
+Up to this point, the token has given the player that has it the right to perform an action, a right that none of the other players have. But tokens could also force a player to perform an action.
+
+Consider the following problem: The two agents from before, Anne and Bill have to empty out the dishwasher. They each have a preference against doing this, since they both spend time (costs) to do this. \extend{hier vielleicht formal noch mal darstellen?}
+In this example you can see that each agent expects the other agent to act, therefore no agent will act.
+
+Here the introduction of tokens forces a player to make a move because the player that has the token has to perform an action. In this example, every action reaches a goal state, even if it is not in the own players policy.
+
+
+
+
+
+
+
+A deadlock is different from a dead end. In a dead end, none of the agents' policies prescribe an action, not even for another agent. In the definition (2) above it becomes obvious that these are two different things.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+The problem with the tokens is the allocation of the token in the beginning. Consider the following example as the main example in this chapter.
+
+
 \section{Lever Problem}
   The lever has a position betreen -2 and 2.\\
   There are two players that each want to move a lever in a direction. Player 1s' goal is to move the lever to the left, to the position -2 and player 2s' goal is to move the lever to the right, to the positon 2. They do not know the other players' goal and they do not know if there is another goal than their own goal.
@@ -31,13 +152,14 @@
 
   The agents here only have an incentive to move the lever in the direction towards their own goal. One possible execution would be that the agents each move the lever one step towards their goal and the other agent would move the lever back to the starting position. This is a infinite sequence which is not successful, no player would reach any goal.
 
-  The solution to this problem could be the introduction of a token, which gives one agent the ability to preform multiple actions and prevents the other agents from preforming any action.
-
   There are three ways to introduce a token to this game.
   \begin{enumerate}
-    \item Tabel token - the token is lying on a table and one of the agents can take the token in the beginning.
-    \item give token - in the specification of the game it is also specified which agent will have the token in the beginning.
-    \item random token - the token is given to a random agent in the beginning. If that agent can not preform any action it can pass the token to a player who can.
+    \item Tabel token - the token is lying on a table and one of the agents can take the token in the beginning. \\
+    The problem here is in the example before with the dishwasher. In this example, no player would take the token.
+    \item give token - in the specification of the game it is also specified which agent will have the token in the beginning. \\
+    The problem with this introduction is that in every new game, this has to be written in the definition of the game. It has to be decided in the beginning.
+    \item random token - the token is given to a random agent in the beginning. If that agent can not preform any action it can pass the token to a player who can. \\
+    An agent who knows nothing and has no action will prevent the game from ever reaching a goal state.
   \end{enumerate}
 
 \section{Token versions}
@@ -120,25 +242,3 @@
   \end{itemize}
 
   $s_0=\{\text{At(Hebel, N), Has(randomagent} \in \mathcal{A},\text{Token)}\}$
-
-\section{TODO}
-\begin{theorem}
-Under the condition of optimal plans one can prevent infinite executions with tokens.
-\end{theorem}
-
-\begin{proof}[Proof Sketch]
-  The token prevents any other player from making a move that is not a part of an optimal plan of the first player to have the token and an optimal plan.
-\end{proof}
-
-\begin{theorem}
-If an Agent gets the token that has found a Plan, then the Game is executable in infinite executions.
-\end{theorem}
-
-\begin{proof}[Proof Sketch]
-In every version of the game if one agent has found a Plan, even if the others have not, and that agent starts executing the plan, whenever that player gives the token away the recieving player knows that the agent with the plan wants the agent to act. then the plan can be executed.
-\begin{enumerate}
-  \item Tabel token - The agent with a plan will take the token and set the plan in Motion.
-  \item give token - In the game initialization the token just has to be passed to someone who has some kind of plan. Even if that player just passes on the plan.
-  \item random token - 
-\end{enumerate}
-\end{proof}
