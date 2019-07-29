@@ -1,6 +1,6 @@
 \chapter{Introduction}\label{chap:introduction}
 
-How would it be if we had a perfect execution order?
+How would it be if we had a perfect execution order? \\
 
 This thesis is trying to answer that question by looking at the different execution orders. In other pieces of writing about epistemic planning the execution order is a seemingly random one, usually unclear. This is easier to describe mathematically, but it also has some drawbacks. My thesis is trying to take these games and transform them into a game with a token. As you will see, this will have some advantages.
 
@@ -19,11 +19,6 @@ We have found that the token based orders are a subset of the asynchronous order
 
 Because of this we only looked at token based orders in this thesis.
 
+``Epistemic planning is the enrichtment of planning with epistemic notions, that is, knowledge and belief.''
 
-Epistemic planning is taking regular planning and enriching it with knowledge and belief. In regular planning, the world is simplified so that everyone knows everything there is to know about that particular microverse. But this is not the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations on that world. To model that, we use epistemic logic. To show that the agents each have different knowledge that can change over time, we describe the logic as being dynamic.
-
-How old is epistemic planning?
-
-What is the future of epistemic planning?
-
-Why is this research relevant?
+Epistemic planning is taking regular planning and enriching it with knowledge and belief. In regular planning, the world is simplified so that everyone knows everything there is to know about that particular microverse. But this is not the real world. In the real world, agents ofthen have only little knowledge and can therefore make only limited calculations on that world. To model that, we use epistemic logic.

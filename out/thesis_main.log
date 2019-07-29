@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  18 JUL 2019 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  29 JUL 2019 12:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1106,12 +1106,20 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
-\c@theorem=\count321
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 123.
-Package hyperref Info: Option `plainpages' set `false' on input line 123.
-\c@todos=\count322
-\c@extends=\count323
-\c@drafts=\count324
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen280
+\WF@size=\dimen281
+\c@WF@wrappedlines=\count321
+\WF@box=\box65
+\WF@everypar=\toks49
+Package: wrapfig 2003/01/31  v 3.6
+)
+\c@theorem=\count322
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 129.
+Package hyperref Info: Option `plainpages' set `false' on input line 129.
+\c@todos=\count323
+\c@extends=\count324
+\c@drafts=\count325
 )
 (out/thesis_main.aux)
 \openout1 = `thesis_main.aux'.
@@ -1143,21 +1151,22 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen280
-\scratchbox=\box65
-\nofMPsegments=\count326
-\nofMParguments=\count327
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen281
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count326
+\scratchdimen=\dimen282
+\scratchbox=\box66
+\nofMPsegments=\count327
+\nofMParguments=\count328
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count329
+\MPscratchDim=\dimen283
+\MPnumerator=\count330
+\makeMPintoPDFobject=\count331
+\everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1175,7 +1184,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box66
+\AtBeginShipoutBox=\box67
 Package hyperref Info: Link coloring OFF on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1184,7 +1193,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count331
+\c@section@level=\count332
 )
 LaTeX Info: Redefining \ref on input line 34.
 LaTeX Info: Redefining \pageref on input line 34.
@@ -1210,7 +1219,7 @@ File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
 Package auxhook Info: \AddLineBeginMainAux comes a little late,
 (auxhook)             because the main .aux file is already opened on input lin
 e 164.
-\BKM@id=\count332
+\BKM@id=\count333
 ))
 ABD: EveryShipout initializing macros
 LaTeX Info: Redefining \microtypecontext on input line 34.
@@ -1335,116 +1344,83 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 52
 \tf@lof=\write6
 \openout6 = `thesis_main.lof'.
 
- [9] [10
-
-
-]
-Package tocbasic Info: character protrusion at lot deactivated on input line 53
-.
- (out/thesis_main.lot)
-\tf@lot=\write7
-\openout7 = `thesis_main.lot'.
-
- [11] [12
-
-
-]
-Package tocbasic Info: character protrusion at loa deactivated on input line 54
-.
-
-(out/thesis_main.loa)
-\tf@loa=\write8
-\openout8 = `thesis_main.loa'.
-
 Package hyperref Info: Option `pageanchor' set `true' on input line 55.
- [13] [14
+ [9] [10
 
 
 ] (./chapters/1-introduction.tex
 chapter 1.
-) (./chapters/2-relatedwork.tex [1
+[1
 
 
-] [2
-
-
-]
+]) (./chapters/2-relatedwork.tex [2]
 chapter 2.
-) (./chapters/3-background.tex [3] [4
+) (./chapters/3-background.tex [3
+
+
+] [4
 
 
 ]
 chapter 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--9
+(./figures/pictures/hebelbild.tex
+<figures/pictures/Hebelbild.png, id=107, 694.84593pt x 324.46219pt>
+File: figures/pictures/Hebelbild.png Graphic file (type png)
+<use figures/pictures/Hebelbild.png>
+Package pdftex.def Info: figures/pictures/Hebelbild.png  used on input line 1.
+(pdftex.def)             Requested size: 277.93344pt x 129.78256pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 11--14
 
  []
 
-[5] [6]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 67.
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
+[5 <./figures/pictures/Hebelbild.png>] [6]
+Underfull \vbox (badness 3168) has occurred while \output is active []
+
+ [7]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 93.
+
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 67.
- [7] [8] [9])
-(./chapters/4-approach.tex [10]
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 93.
+ [8] [9] [10])
+(./chapters/4-approach.tex [11] [12]
 chapter 4.
 
-Overfull \hbox (14.53764pt too wide) in paragraph at lines 7--19
+Overfull \hbox (13.94792pt too wide) in paragraph at lines 11--21
+\T1/lmr/m/n/10.95 (-20) Further we de-fi-ne an ac-ti-on $\OML/lmm/m/it/10.95 gi
+veToken[] \OT1/lmr/m/n/10.95 (-20) = \OMS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 h
+as\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20
+) )\OML/lmm/m/it/10.95 ; \OMS/lmsy/m/n/10.95 :\OML/lmm/m/it/10.95 has\OT1/lmr/m
+/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20) ) \OMS/lms
+y/m/n/10.95 ^ \OML/lmm/m/it/10.95 has\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10
+.95 j; token\OT1/lmr/m/n/10.95 (-20) )\OMS/lmsy/m/n/10.95 i$
+ []
+
+[13
+
+
+] (./figures/pictures/dishwasher.tex
+<figures/pictures/dishwasher.png, id=177, 184.43906pt x 252.945pt>
+File: figures/pictures/dishwasher.png Graphic file (type png)
+<use figures/pictures/dishwasher.png>
+Package pdftex.def Info: figures/pictures/dishwasher.png  used on input line 3.
+
+(pdftex.def)             Requested size: 73.7743pt x 101.17621pt.
+) [14]
+Overfull \hbox (23.1558pt too wide) in paragraph at lines 53--66
 \T1/lmr/m/n/10.95 (-20) Former we de-fi-ne an Ac-ti-on $\OML/lmm/m/it/10.95 giv
 eToken[] \OT1/lmr/m/n/10.95 (-20) = \OMS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 ha
 s\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20)
- )\OML/lmm/m/it/10.95 ; \OMS/lmsy/m/n/10.95 :\OML/lmm/m/it/10.95 has\OT1/lmr/m/
-n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20) ) \OMS/lmsy
-/m/n/10.95 ^ \OML/lmm/m/it/10.95 has\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.
-95 j; token\OT1/lmr/m/n/10.95 (-20) )\OMS/lmsy/m/n/10.95 i$
+ )[][]\OML/lmm/m/it/10.95 ; \OMS/lmsy/m/n/10.95 :\OML/lmm/m/it/10.95 has\OT1/lm
+r/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20) ) \OMS/
+lmsy/m/n/10.95 ^
  []
 
-[11
-
-
-] [12] [13] [14] [15]
-Overfull \hbox (12.4551pt too wide) in paragraph at lines 183--186
-[]$[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token\OT1/lmr/m/n/10.95
- (-20) ) = \OMS/lmsy/m/n/10.95 h:[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.9
-5 agt; token\OT1/lmr/m/n/10.95 (-20) ) \OMS/lmsy/m/n/10.95 ^ []\OT1/lmr/m/n/10.
-95 (-20) (\OML/lmm/m/it/10.95 token; table\OT1/lmr/m/n/10.95 (-20) )\OML/lmm/m/
-it/10.95 ; []\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token\OT1/lmr/m
-/n/10.95 (-20) ) \OMS/lmsy/m/n/10.95 ^
- []
-
-
-Overfull \hbox (78.80392pt too wide) in paragraph at lines 186--192
-[]$[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token; otheragt\OT1/lmr
-/m/n/10.95 (-20) ) = \OMS/lmsy/m/n/10.95 h[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/
-m/it/10.95 agt; token\OT1/lmr/m/n/10.95 (-20) )\OML/lmm/m/it/10.95 ; \OMS/lmsy/
-m/n/10.95 :[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token\OT1/lmr/m
-/n/10.95 (-20) ) \OMS/lmsy/m/n/10.95 ^ []\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/i
-t/10.95 otheragt; token\OT1/lmr/m/n/10.95 (-20) )\OMS/lmsy/m/n/10.95 i$ 
- []
-
-
-Overfull \hbox (78.80392pt too wide) in paragraph at lines 211--217
-[]$[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token; otheragt\OT1/lmr
-/m/n/10.95 (-20) ) = \OMS/lmsy/m/n/10.95 h[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/
-m/it/10.95 agt; token\OT1/lmr/m/n/10.95 (-20) )\OML/lmm/m/it/10.95 ; \OMS/lmsy/
-m/n/10.95 :[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token\OT1/lmr/m
-/n/10.95 (-20) ) \OMS/lmsy/m/n/10.95 ^ []\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/i
-t/10.95 otheragt; token\OT1/lmr/m/n/10.95 (-20) )\OMS/lmsy/m/n/10.95 i$ 
- []
-
-[16]
-Overfull \hbox (78.80392pt too wide) in paragraph at lines 236--242
-[]$[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token; otheragt\OT1/lmr
-/m/n/10.95 (-20) ) = \OMS/lmsy/m/n/10.95 h[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/
-m/it/10.95 agt; token\OT1/lmr/m/n/10.95 (-20) )\OML/lmm/m/it/10.95 ; \OMS/lmsy/
-m/n/10.95 :[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 agt; token\OT1/lmr/m
-/n/10.95 (-20) ) \OMS/lmsy/m/n/10.95 ^ []\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/i
-t/10.95 otheragt; token\OT1/lmr/m/n/10.95 (-20) )\OMS/lmsy/m/n/10.95 i$ 
- []
-
-) (./chapters/6-conclusions.tex [17] [18
+[15 <./figures/pictures/dishwasher.png>] [16]) (./chapters/6-conclusions.tex
+[17] [18
 
 
 ]
@@ -1458,36 +1434,32 @@ chapter 6.
 
 
 ]
-\c@ct=\count333
+\c@ct=\count334
 ) (out/thesis_main.bbl [23] [24
 
 
-]
-
-LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
-               before end of `thebibliography' environment on input line 3.
-
-) [25] [26]
+]) [25] [26]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
- (out/thesis_main.aux)
+
+(out/thesis_main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38050 strings out of 494435
- 693129 string characters out of 6173464
- 1028688 words of memory out of 5000000
- 40982 multiletter control sequences out of 15000+600000
- 618551 words of font info for 142 fonts, out of 8000000 for 9000
+ 38119 strings out of 494435
+ 694341 string characters out of 6173464
+ 1029688 words of memory out of 5000000
+ 41021 multiletter control sequences out of 15000+600000
+ 619652 words of font info for 153 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 67i,10n,77p,9237b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
+ 67i,10n,77p,9237b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
@@ -1496,10 +1468,10 @@ ts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
 re/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on out/thesis_main.pdf (42 pages, 291883 bytes).
+Output written on out/thesis_main.pdf (38 pages, 315876 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
- 23709 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 23679 words of extra memory for PDF output out of 24883 (max. 10000000)
 

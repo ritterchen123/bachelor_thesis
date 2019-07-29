@@ -1,3 +1,22 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{bolander2018better}
+T.~Bolander, T.~Engesser, R.~Mattm{\"u}ller, and B.~Nebel, ``Better eager than
+  lazy? how agent types impact the successfulness of implicit coordination,''
+  in {\em Sixteenth International Conference on Principles of Knowledge
+  Representation and Reasoning}, 2018.
+
+\bibitem{bolander2017gentle}
+T.~Bolander, ``A gentle introduction to epistemic planning: The del approach,''
+  {\em arXiv preprint arXiv:1703.02192}, 2017.
+
+\bibitem{Ditmarsch2007}
+H.~v. Ditmarsch, W.~van~der Hoek, and B.~Kooi, {\em Dynamic Epistemic Logic}.
+\newblock Springer Publishing Company, Incorporated, 1st~ed., 2007.
+
+\bibitem{cimattietal}
+A.~Cimatti, M.~Pistore, M.~Roveri, and P.~Traverso, ``Weak, strong, and strong
+  cyclic planning via symbolic model checking,'' {\em Artificial Intelligence},
+  vol.~147, 08 2001.
 
 \end{thebibliography}

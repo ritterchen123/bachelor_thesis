@@ -1,11 +1,9 @@
 \chapter{Background}\label{chap:background}
 
-Imagine there is a lever between two players, Anne and Bill. It is upright in the middle position and has 5 positions in total. Anne thinks the lever should be pulled two positions to her side and Bill thinks the lever should be pulled two positions to his side.\\
-\input{figures/pictures/Hebelbild} \\
-With the asynchronous execution order this game could be easily finished if Anne or Bill just pulled the lever two times in their direction. But just as easily this game could go on a really long time, if Anne and Bill pulled the lever alternating, once to the right and then to the left, then to the right again and so on. This could go on infinitely. With no set execution order, how can we prevent the game from going on infinitely?
+Imagine there is a lever between two players, (Anne and Bill) it is upright in the middle position and has 5 positions in total. Player one thinks the lever should be pulled two positions to her side and player two thinks the lever should be pulled two positions to his side. What do the players do?\\
+\input{figures/pictures/Hebelbild}
 
-
-The definitions are taken from the ``Better eager than lazy'' (2018) \cite{bolander2018better} paper, the ``A gentle introduction to DEL'' (2017) \cite{bolander2017gentle} and the book ``Dynamic epistemic logic'' from Ditmarsch \cite{Ditmarsch2007}.
+The definitions are taken from Thomas Bolander et al. (2018) \cite{bolander2018better} and the book from Ditmarsch \cite{Ditmarsch2007}.
 
 \section{DEL}
 DEL, or Dynamic Epistemic Logic is a specific mathematical language used as the framework.
@@ -16,7 +14,7 @@ $$
 $$
 
 with $p \in \mathcal{P}$ and $i \in \mathcal{A}$.
-$\top$ describes $\varphi$ as always being true, $\bot$ as always false.
+$\top$ describles $\varphi$ as always being true, $\bot$ als always false.
 $K_i \varphi$ reads as ``Agent $i$ knows $\varphi$''. $C \varphi$ reads as ``it is common knowledge that $\varphi$ ''.
 Let's look back at the example. The two agents, $a$ (Anne) and $b$ (Bill) have two goal positions, goal $p$ (lever to the left) and $q$ (lever to the right). Anne knows that one goal position is the left, but does not know the other: $K_a p \wedge \neg K_a q$ . Bill knows that one goal position is the right, but does not know the other position: $\neg K_b  p \wedge K_b q$.
 
@@ -74,6 +72,8 @@ s=
   \draw (w2) -- node[above] {Bill} (w3);
 \end{tikzpicture}
 \]
+
+\newpage
 
 \subsection{Epistemic Actions and Product Updates}
 

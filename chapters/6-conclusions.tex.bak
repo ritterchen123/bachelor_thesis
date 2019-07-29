@@ -1,0 +1,3 @@
+\chapter{Conclusion}\label{chap:conclusion}
+
+In conclusion, we can see that this approach solves the problem of the infinite executions, wich other approaches do not solve. This approach also solves the provlems that other approaches do solve, like deadlocks.

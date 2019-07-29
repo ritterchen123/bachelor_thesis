@@ -1,32 +1,4 @@
 \chapter{Related Work}\label{chap:relatedwork}
 Give a brief overview of the work relevant for your thesis.
 
-\section{An Example}
-
-\[
-\begin{tikzpicture}
-  \draw (0,0) node [desig] {}; % designation
-  \draw (0,0) node[world, label=below:{$w_1: p$}] (w1) {};
-  \draw (2,0) node[world, label=below:{$w_2:  $}] (w2) {};
-  \draw (w1) -- node[above] {$1,2$} (w2);
-\end{tikzpicture}
-%
-~\otimes~
-%
-\begin{tikzpicture}
-  \draw (0,0) node [desig] {};
-  \draw (0,0) node[world, label=above:{$e_1$}, label=below:{\preeff{$p$}{$q$}}] (e1) {};
-  \draw (2,0) node [desig] {};
-  \draw (2,0) node[world, label=above:{$e_2$}, label=below:{\preeff{$\neg p$}{$q$}}] (e2) {};
-  \draw (e1) -- node[above] {$2$} (e2);
-\end{tikzpicture}
-%
-~=~
-%
-\begin{tikzpicture}
-  \draw (0,0) node [desig] {};
-  \draw (0,0) node[world, label=below:{$(w_1, e_1): p, q$}] (w1e1) {};
-  \draw (2.5,0) node[world, label=below:{$(w_2, e_2): q $}] (w2e2) {};
-  \draw (w1e1) -- node[above] {$2$} (w2e2);
-\end{tikzpicture}
-\]
+This thesis is building up from the paper ``Better eager than lazy'' \cite{bolander2018better} from my advisors. In this paper, they researched how a lazy agent, who had a preference against doing its own actions, compares to eager agents in planning problems.

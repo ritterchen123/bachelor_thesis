@@ -1,12 +1,11 @@
-\chapter{The tokenized approach}\label{chap:approach}
+\chapter{Aussagekräftigerer Titel}\label{chap:approach}
 
 Lets go back to the example  from the beginning. The problem was that both agents $a$ and $b$ wanted to pull the lever to their own goal which results in infinite executions. This problem can be eliminated by introducing a token. With a token, only the player that has the token gets to execute an action. If the agent is done with their own actions, then they can pass the token on to the next player.
 
-\section{Infinite executions to finite executions}
+\section{Infinite Executions}
 
-Infinite executions appear in the asynchronous executions order in which no token is used.\\
 \extend{einleitender Satz}
-We are now going to describe a function that takes a regular planning task and tokenize that task. The goal with the tokens is that only one player gets to make a move at a time.
+\draft{We are now going to describe a function that takes a regular planning task and tokenize that task. The goal with the tokens is that only one player gets to make a move at a time.}
 
 Given a regular planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle $, the function \textit{tokenize} will transform the regular planning task into a tokenized planning task so that for all $a \in A$:
  if $a = \langle pre, \textit{eff} \rangle$, then
@@ -24,7 +23,7 @@ Then $ \Pi^{\text{Token}} = \langle s_0, A ^{\text{Token}}, \omega ^{\text{Token
 \extend{überleitender Satz}
 
 \begin{theorem}
-Under the condition of optimal plans one can prevent the appearance of infinite executions in solvable games with asynchronous execution order with the introduction of a token based execution order.
+Under the condition of optimal plans one can prevent the apperance of infinite executions in solvable games with asynchronus execution order with the introduction of a token based execution order.
 \end{theorem}
 
 \begin{proof}[proof sketch]
@@ -32,9 +31,10 @@ Under the condition of optimal plans one can prevent the appearance of infinite 
 \end{proof}
 
 
-\section{The prevention of deadlocks}
+\section{Deadlocks}
 
-A deadlock for a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a global state such that:
+A deadlock for a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a global state such that
+\todo{hier noch die unterpunkte umschreiben}
 \begin{enumerate}
   \item $s$ is not a goal state \\
     Something still needs to be done
@@ -44,7 +44,6 @@ A deadlock for a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a global state 
     Nothing will be done because of incompatible individual policies
 \end{enumerate}
 
-\input{figures/pictures/dishwasher}
 This can be seen in the following example: The two agents from before, Anne and Bill have to empty out the dishwasher. They each have a preference against doing this, since they both spend time (costs) to do this. \extend{hier vielleicht formal noch mal darstellen?}
 In this example you can see that each agent expects the other agent to act, therefore no agent will act.
 
@@ -67,11 +66,11 @@ Then $ \Pi^{\text{Token}} = \langle s_0, A ^{\text{Token}}, \omega ^{\text{Token
 The changes imply that each agent can only pass on the token when that agent has performed an action.
 
 \begin{theorem}
-Under the condition of optimal plans one can prevent the appearance of deadlocks in solvable games with asynchronous execution order with the introduction of a token based execution order.
+Under the condition of optimal plans one can prevent the apperance of deadlocks in solvable games with asynchron execution order with the introduction of a token based execution order.
 \end{theorem}
 
 \begin{proof}[proof sketch]
-  Before any player can give away the token, that player has to perform an action. If a player that has found a plan gets the token, that agent first has to do an action. This contradicts the definition of a deadlock.
+  Before any player can give away the token, that player has to perform an action. If a player that has found a plan gets the token, that agent first has to do an action. This contradics the definition of a deadlock.
 \end{proof}
 
 
@@ -133,7 +132,7 @@ A deadlock is different from a dead end. In a dead end, none of the agents' poli
 The problem with the tokens is the allocation of the token in the beginning. Each allocation type brings advantages, but also has some disadvantages. Lets start with the straightforward allocation we used up to now.
 
 
-\section{Asynchronous execution order}
+\section{Asynchron execution order}
   The first execution order is seemingly random. Some undefined agent has the token in the beginning. The advantage is that you do not have to define anything in the beginning, but this is also a disadvantage, since this token is defined, but the agent that has it in the beginning is not.
 
 
@@ -141,15 +140,15 @@ The problem with the tokens is the allocation of the token in the beginning. Eac
 
   There are three other ways to introduce a token to this game.
   \begin{enumerate}
-    \item Table token - the token is lying on a table and one of the agents can take the token in the beginning. \\
-    The disadvantage becomes clear in the example with the dishwasher. No agent would take the token.
+    \item Tabel token - the token is lying on a table and one of the agents can take the token in the beginning. \\
+    The disadvantage becomes clear in the example with the diswasher. No agent would take the token.
     \item give token - in the specification of the game it is also specified which agent will have the token in the beginning. \\
     The problem with this introduction is that in every new game, this has to be written in the definition of the game. In order for the game to be efficient, it should be given to a player who has found a plan.
     \item random token - the token is given to a random agent in the beginning. If that agent can not preform any action it can pass the token to a player who can. \\
     An agent who knows nothing and has no action will prevent the game from ever reaching a goal state.
   \end{enumerate}
 
-Each version has its own drawbacks. In every game, you have to know the occurring problem beforehand to know which token allocation is efficient.
+Each version has its own drawbacks. In every game, you have to know the occuring problem beforehand to know whick token allocation is efficient.
 
 
 

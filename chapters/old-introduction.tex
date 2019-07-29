@@ -92,3 +92,34 @@ For a more complete list we recommend to read Donald Knuth's paper on mathematic
         \item In tables avoid vertical lines, keep them clean and neat. See \ref{tab:accuracy} for an example. More details can be found in the `Small Guide to Making Nice Tables' \url{https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}
 
     \end{itemize}
+
+
+    \section{An Example}
+
+    \[
+    \begin{tikzpicture}
+      \draw (0,0) node [desig] {}; % designation
+      \draw (0,0) node[world, label=below:{$w_1: p$}] (w1) {};
+      \draw (2,0) node[world, label=below:{$w_2:  $}] (w2) {};
+      \draw (w1) -- node[above] {$1,2$} (w2);
+    \end{tikzpicture}
+    %
+    ~\otimes~
+    %
+    \begin{tikzpicture}
+      \draw (0,0) node [desig] {};
+      \draw (0,0) node[world, label=above:{$e_1$}, label=below:{\preeff{$p$}{$q$}}] (e1) {};
+      \draw (2,0) node [desig] {};
+      \draw (2,0) node[world, label=above:{$e_2$}, label=below:{\preeff{$\neg p$}{$q$}}] (e2) {};
+      \draw (e1) -- node[above] {$2$} (e2);
+    \end{tikzpicture}
+    %
+    ~=~
+    %
+    \begin{tikzpicture}
+      \draw (0,0) node [desig] {};
+      \draw (0,0) node[world, label=below:{$(w_1, e_1): p, q$}] (w1e1) {};
+      \draw (2.5,0) node[world, label=below:{$(w_2, e_2): q $}] (w2e2) {};
+      \draw (w1e1) -- node[above] {$2$} (w2e2);
+    \end{tikzpicture}
+    \]
