@@ -1,10 +1,25 @@
 \begin{thebibliography}{1}
 
+\bibitem{plaza1989logics}
+J.~Plaza, ``Logics of public announcements,'' in {\em Proceedings 4th
+  International Symposium on Methodologies for Intelligent Systems}, 1989.
+
 \bibitem{bolander2018better}
 T.~Bolander, T.~Engesser, R.~Mattm{\"u}ller, and B.~Nebel, ``Better eager than
   lazy? how agent types impact the successfulness of implicit coordination,''
   in {\em Sixteenth International Conference on Principles of Knowledge
   Representation and Reasoning}, 2018.
+
+\bibitem{ray2012execution}
+S.~Ray and A.~De~Sarkar, ``Execution analysis of load balancing algorithms in
+  cloud computing environment,'' {\em International Journal on Cloud Computing:
+  Services and Architecture (IJCCSA)}, vol.~2, no.~5, pp.~1--13, 2012.
+
+\bibitem{makki1992token}
+K.~Makki, P.~Banta, K.~Been, N.~Pissinou, and E.~Park, ``A token based
+  distributed k mutual exclusion algorithm,'' in {\em [1992] Proceedings of the
+  Fourth IEEE Symposium on Parallel and Distributed Processing}, pp.~408--411,
+  IEEE, 1992.
 
 \bibitem{bolander2017gentle}
 T.~Bolander, ``A gentle introduction to epistemic planning: The del approach,''

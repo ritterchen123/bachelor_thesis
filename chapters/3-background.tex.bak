@@ -1,9 +1,11 @@
 \chapter{Background}\label{chap:background}
 
-Imagine there is a lever between two players, (Anne and Bill) it is upright in the middle position and has 5 positions in total. Player one thinks the lever should be pulled two positions to her side and player two thinks the lever should be pulled two positions to his side. What do the players do?\\
-\input{figures/pictures/Hebelbild}
+Imagine there is a lever between two players, Anne and Bill. It is upright in the middle position and has 5 positions in total. Anne thinks the lever should be pulled two positions to her side and Bill thinks the lever should be pulled two positions to his side.\\
+\input{figures/pictures/Hebelbild} \\
+With the asynchronous execution order this game could be easily finished if Anne or Bill just pulled the lever two times in their direction. But just as easily this game could go on a really long time, if Anne and Bill pulled the lever alternating, once to the right and then to the left, then to the right again and so on. This could go on infinitely. With no set execution order, how can we prevent the game from going on infinitely?
 
-The definitions are taken from Thomas Bolander et al. (2018) \cite{bolander2018better} and the book from Ditmarsch \cite{Ditmarsch2007}.
+
+The definitions are taken from the ``Better eager than lazy'' (2018) \cite{bolander2018better} paper, the ``A gentle introduction to DEL'' (2017) \cite{bolander2017gentle} and the book ``Dynamic epistemic logic'' from Ditmarsch \cite{Ditmarsch2007}.
 
 \section{DEL}
 DEL, or Dynamic Epistemic Logic is a specific mathematical language used as the framework.
@@ -14,7 +16,7 @@ $$
 $$
 
 with $p \in \mathcal{P}$ and $i \in \mathcal{A}$.
-$\top$ describles $\varphi$ as always being true, $\bot$ als always false.
+$\top$ describes $\varphi$ as being true, $\bot$ as false.
 $K_i \varphi$ reads as ``Agent $i$ knows $\varphi$''. $C \varphi$ reads as ``it is common knowledge that $\varphi$ ''.
 Let's look back at the example. The two agents, $a$ (Anne) and $b$ (Bill) have two goal positions, goal $p$ (lever to the left) and $q$ (lever to the right). Anne knows that one goal position is the left, but does not know the other: $K_a p \wedge \neg K_a q$ . Bill knows that one goal position is the right, but does not know the other position: $\neg K_b  p \wedge K_b q$.
 
@@ -29,7 +31,6 @@ $\sim_i$ being an equivalence relation called the indistinguishably relation for
 In the example above, Anne sees two worlds. One world where just the lever to the left is a goal, but also a world where another goal is the lever to the right. Those two worlds are indistinguishable for Anne.
 
 
-\extend{this should be written differently}
 For $W_d \subseteq W$, the pair $(\mathcal{M}, W_d)$ is called an epistemic state (or simply a state) and the worlds of $W_d$ are called designated worlds. A state is called global if $W_d=\{w\}$ for some world $w$ (called the actual world). We then often write $(\mathcal{M},w)$ instead of $(\mathcal{M},\{w\} )$. We use $S^{gl}(P,\mathcal{A})$ to denote the set of global states (or simply $S^{gl}$ if $P$ and $\mathcal{A}$ are clear from context). For any state $ s=(\mathcal{M}, W_d) $ we let $Globals(s)= \{ (\mathcal{M},w) | w \in W_d \} $.
 A state $(\mathcal{M}, W_d)$ is called a local state for agent $i$ if $W_d$ is closed under $\sim _i$ (that is, if $w \in W_d$ and $w \sim _i v $, then $v \in W_d$).
 Given a state $s=(\mathcal{M}, W_d)$ the associated local state of agent $i$, denoted $s^i$, is $(\mathcal{M},\{v|v\sim _i w \text{ and } w \in W_d\})$. Going from $s$ to $s^i$ amounts to a \textit{perspective shift} to the local perspective of agent i.
@@ -54,9 +55,14 @@ Let $(\mathcal{M}, W_d)$ be a state on $P,\mathcal{A}$ with $\mathcal{M}=(W, (\s
   &(\mathcal{M}, w) \models C \varphi
     & &\text{ iff } \qquad
     (\mathcal{M},v) \models \varphi \text{ for all } v \sim^* w \\
+  &(\mathcal{M}, w) \models \top
+    & &\text{        } \qquad
+    \text{always} \\
+  &(\mathcal{M}, w) \models \bot
+    & &\text{        } \qquad
+    \text{never}
 \end{align*}
-where $\sim^*$ is the transitive closure of $\bigcup_{i \in \mathcal{A}}\sim_i$. \\
-\todo{this still needs updating with top and bot}
+where $\sim^*$ is the transitive closure of $\bigcup_{i \in \mathcal{A}}\sim_i$.
 
 Using Anne and Bill as an Example, Anne cannot distinguish between $p,q$ and $p, \neg q$. Bill cannot distinguish between $p,q$ and $\neg p,q$. A graphic representation of this would be the global state $s = (\mathcal{M}, w_2)$ with the nodes representing the worlds and the edges representing the indistinguishably relation. The circle around a node represent designated worlds.
 
@@ -72,8 +78,6 @@ s=
   \draw (w2) -- node[above] {Bill} (w3);
 \end{tikzpicture}
 \]
-
-\newpage
 
 \subsection{Epistemic Actions and Product Updates}
 
@@ -176,6 +180,8 @@ An execution of a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a maximal (fin
   \item $s_{m+1} \in Globals(s_m \otimes a_{m+1}) $ \\
     Here the source of nondeterminism is from the possibility of nondeterministic action outcomes.
 \end{enumerate}
+
+The subjective cost of a policy profile $\pi_i$ is the lenght of the sequence of alternating global states and actions.
 
 
 If all agents have one strong policy in common which all of them follow, then at execution time, the goal is guaranteed to be eventually reached. If, however, each agent acts on its individual strong policy, then the incompatibility of the individual policies may prevent the agents from reaching the goal, even tough each individual policy is strong.

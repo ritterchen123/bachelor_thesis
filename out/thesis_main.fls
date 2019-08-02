@@ -27,13 +27,13 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
-INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
 INPUT setup.tex
@@ -397,9 +397,6 @@ INPUT chapters/0_2-abstract.tex
 INPUT out/thesis_main.toc
 INPUT out/thesis_main.toc
 OUTPUT out/thesis_main.toc
-INPUT out/thesis_main.lof
-INPUT out/thesis_main.lof
-OUTPUT out/thesis_main.lof
 INPUT chapters/1-introduction.tex
 INPUT chapters/1-introduction.tex
 INPUT chapters/2-relatedwork.tex
@@ -429,8 +426,6 @@ INPUT ./figures/pictures/dishwasher.png
 INPUT ./figures/pictures/dishwasher.png
 INPUT chapters/6-conclusions.tex
 INPUT chapters/6-conclusions.tex
-INPUT chapters/7-acknowledgments.tex
-INPUT chapters/7-acknowledgments.tex
 INPUT todo_list.tex
 INPUT todo_list.tex
 INPUT out/thesis_main.bbl
@@ -438,9 +433,9 @@ INPUT out/thesis_main.bbl
 INPUT out/thesis_main.aux
 INPUT out/thesis_main.out
 INPUT out/thesis_main.out
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb

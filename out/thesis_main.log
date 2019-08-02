@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  29 JUL 2019 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  2 AUG 2019 12:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -136,8 +136,13 @@ Package: babel 2018/11/13 3.27 The Babel package
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2018/11/13 3.27 Babel switching mechanism
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2017/06/06 v3.3r English support from the babel system
+(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
+Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
+phy)
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
+aphy)
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/11/13 3.27 Babel common definitions
@@ -147,29 +152,17 @@ File: babel.def 2018/11/13 3.27 Babel common definitions
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@dirlevel=\count91
 )
+Package babel Info: Making " an active character on input line 121.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
 \l@british = a dialect from \language\l@english 
 \l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
-Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
-phy)
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngermanb.ldf
-Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
-aphy)
-Package babel Info: Making " an active character on input line 121.
 ))
-
-Package babel Warning: Last declared language option is `english',
-(babel)                but the last processed one was `ngerman'.
-(babel)                The main language cannot be set as both a global
-(babel)                and a package option. Use `main=english' as
-(babel)                option. Reported on input line 484.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
+(/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip58
 \thanksmargin=\skip59
@@ -1124,23 +1117,23 @@ Package hyperref Info: Option `plainpages' set `false' on input line 129.
 (out/thesis_main.aux)
 \openout1 = `thesis_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 35.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1185,7 +1178,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring OFF on input line 34.
+Package hyperref Info: Link coloring OFF on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1195,9 +1188,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count332
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
 
 (out/thesis_main.out) (out/thesis_main.out)
 \@outlinefile=\write4
@@ -1209,7 +1202,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           You can avoid loading `bookmark' with KOMA-Script option
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message with `\usepackage{bookmark}'
-(scrbook)           before \begin{document} on input line 34.
+(scrbook)           before \begin{document} on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1222,7 +1215,7 @@ e 164.
 \BKM@id=\count333
 ))
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \microtypecontext on input line 34.
+LaTeX Info: Redefining \microtypecontext on input line 35.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1238,7 +1231,7 @@ Package microtype Info: Using default kerning set `alltext'.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package hyperref Info: Option `pageanchor' set `false' on input line 38.
+Package hyperref Info: Option `pageanchor' set `false' on input line 39.
 
 (./chapters/0_0-titlepage_en.tex
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 26.
@@ -1287,32 +1280,29 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-Overfull \hbox (68.20354pt too wide) in paragraph at lines 26--30
- [][] 
- []
-
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 38.
+(Font)              <14.4> on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 38.
+(Font)              <10> on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 38.
-[1
+(Font)              <7> on input line 39.
+ [1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2]
-(./chapters/0_1-declaration.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2] (./chapters/0_1-decla
+ration.tex
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 5.
- (/usr/share/texmf/tex/latex/lm/t1lmss.fd
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)
-(./chapters/0_2-abstract.tex [1
+) (./chapters/0_2-abstract.tex
+[1
 
 
 
@@ -1327,137 +1317,128 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 51
+Package tocbasic Info: character protrusion at toc deactivated on input line 52
 .
  (out/thesis_main.toc)
 \tf@toc=\write5
 \openout5 = `thesis_main.toc'.
 
-
-[7] [8
+Package hyperref Info: Option `pageanchor' set `true' on input line 56.
+ [7] [8
 
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 52
-.
- (out/thesis_main.lof)
-\tf@lof=\write6
-\openout6 = `thesis_main.lof'.
-
-Package hyperref Info: Option `pageanchor' set `true' on input line 55.
- [9] [10
-
-
-] (./chapters/1-introduction.tex
+(./chapters/1-introduction.tex
 chapter 1.
 [1
 
 
-]) (./chapters/2-relatedwork.tex [2]
-chapter 2.
-) (./chapters/3-background.tex [3
-
-
-] [4
+]) (./chapters/2-relatedwork.tex [2] [3] [4
 
 
 ]
+chapter 2.
+) (./chapters/3-background.tex [5] [6]
 chapter 3.
 (./figures/pictures/hebelbild.tex
-<figures/pictures/Hebelbild.png, id=107, 694.84593pt x 324.46219pt>
+<figures/pictures/Hebelbild.png, id=121, 694.84593pt x 324.46219pt>
 File: figures/pictures/Hebelbild.png Graphic file (type png)
 <use figures/pictures/Hebelbild.png>
-Package pdftex.def Info: figures/pictures/Hebelbild.png  used on input line 1.
-(pdftex.def)             Requested size: 277.93344pt x 129.78256pt.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 11--14
+Package pdftex.def Info: figures/pictures/Hebelbild.png  used on input line 3.
+(pdftex.def)             Requested size: 347.4221pt x 162.23068pt.
+) [7
+
+
+ <./figures/pictures/Hebelbild.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-[5 <./figures/pictures/Hebelbild.png>] [6]
-Underfull \vbox (badness 3168) has occurred while \output is active []
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 93.
-
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
+ [9]
+[10]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 97.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 93.
- [8] [9] [10])
-(./chapters/4-approach.tex [11] [12]
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 97.
+ [11] [12] [13])
+(./chapters/4-approach.tex [14]
 chapter 4.
 
-Overfull \hbox (13.94792pt too wide) in paragraph at lines 11--21
-\T1/lmr/m/n/10.95 (-20) Further we de-fi-ne an ac-ti-on $\OML/lmm/m/it/10.95 gi
-veToken[] \OT1/lmr/m/n/10.95 (-20) = \OMS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 h
-as\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20
-) )\OML/lmm/m/it/10.95 ; \OMS/lmsy/m/n/10.95 :\OML/lmm/m/it/10.95 has\OT1/lmr/m
-/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20) ) \OMS/lms
-y/m/n/10.95 ^ \OML/lmm/m/it/10.95 has\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10
-.95 j; token\OT1/lmr/m/n/10.95 (-20) )\OMS/lmsy/m/n/10.95 i$
+Overfull \hbox (6.09013pt too wide) in paragraph at lines 7--9
+\T1/lmr/bx/n/10.95 nungsal-go-rith-mus ein-fuehren muss. Dann wuerde ich das hi
+er schreiben.)[][][] 
  []
 
-[13
+[15
 
 
-] (./figures/pictures/dishwasher.tex
-<figures/pictures/dishwasher.png, id=177, 184.43906pt x 252.945pt>
+] [16] [17] (./figures/pictures/dishwasher.tex
+<figures/pictures/dishwasher.png, id=209, 184.43906pt x 252.945pt>
 File: figures/pictures/dishwasher.png Graphic file (type png)
 <use figures/pictures/dishwasher.png>
 Package pdftex.def Info: figures/pictures/dishwasher.png  used on input line 3.
 
-(pdftex.def)             Requested size: 73.7743pt x 101.17621pt.
-) [14]
-Overfull \hbox (23.1558pt too wide) in paragraph at lines 53--66
-\T1/lmr/m/n/10.95 (-20) Former we de-fi-ne an Ac-ti-on $\OML/lmm/m/it/10.95 giv
-eToken[] \OT1/lmr/m/n/10.95 (-20) = \OMS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 ha
-s\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20)
- )[][]\OML/lmm/m/it/10.95 ; \OMS/lmsy/m/n/10.95 :\OML/lmm/m/it/10.95 has\OT1/lm
-r/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 i; token\OT1/lmr/m/n/10.95 (-20) ) \OMS/
-lmsy/m/n/10.95 ^
+(pdftex.def)             Requested size: 55.33214pt x 75.88408pt.
+) [18 <./figures/pictures/dishwasher.png>]
+Overfull \hbox (3.17805pt too wide) in paragraph at lines 91--106
+\T1/lmr/m/n/10.95 (-20) if $\OML/lmm/m/it/10.95 a \OT1/lmr/m/n/10.95 (-20) = \O
+MS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 pre; []\OMS/lmsy/m/n/10.95 i$\T1/lmr/m/n
+/10.95 (-20) , then $\OML/lmm/m/it/10.95 tokenize \OMS/lmsy/m/n/10.95 ^^@ \OML/
+lmm/m/it/10.95 force\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n
+/10.95 (-20) ) = \OMS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 pre \OMS/lmsy/m/n/10.
+95 ^ \OML/lmm/m/it/10.95 hasToken[]; [][][]\OT1/lmr/m/n/10.95 (-20) )$ 
  []
 
-[15 <./figures/pictures/dishwasher.png>] [16]) (./chapters/6-conclusions.tex
-[17] [18
+
+Overfull \hbox (13.36005pt too wide) in paragraph at lines 91--106
+\T1/lmr/m/n/10.95 (-20) Moreover: $\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 (-
+20) (\OML/lmm/m/it/10.95 tokenize \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 f
+orce\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n/10.95 (-20) )) 
+= \OML/lmm/m/it/10.95 !\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 a\OT1/lmr/
+m/n/10.95 (-20) )$ \T1/lmr/m/n/10.95 (-20) for all $\OML/lmm/m/it/10.95 a \OMS/
+lmsy/m/n/10.95 2 \OML/lmm/m/it/10.95 A$\T1/lmr/m/n/10.95 (-20) , and $\OML/lmm/
+m/it/10.95 ![]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 giveToken[]\OT1/lmr
+/m/n/10.95 (-20) ) =
+ []
+
+[19] [20]) (./chapters/6-conclusions.tex [21] [22
 
 
 ]
 chapter 5.
-) (./chapters/7-acknowledgments.tex [19] [20
-
-
-]
-chapter 6.
-) (./todo_list.tex [21] [22
-
-
-]
+) [23] (./todo_list.tex [24]
 \c@ct=\count334
-) (out/thesis_main.bbl [23] [24
+) (out/thesis_main.bbl [25
 
 
-]) [25] [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
+] [26
 
-(out/thesis_main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
+
+] [27]) [28]
+[29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 82.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 82.
+ (out/thesis_main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 82.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 82.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38119 strings out of 494435
- 694341 string characters out of 6173464
- 1029688 words of memory out of 5000000
- 41021 multiletter control sequences out of 15000+600000
- 619652 words of font info for 153 fonts, out of 8000000 for 9000
+ 38158 strings out of 494435
+ 694634 string characters out of 6173464
+ 1030688 words of memory out of 5000000
+ 41027 multiletter control sequences out of 15000+600000
+ 620280 words of font info for 160 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 67i,10n,77p,9237b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+ 67i,15n,77p,9237b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
 -mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex
@@ -1468,10 +1449,10 @@ ts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
 re/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on out/thesis_main.pdf (38 pages, 315876 bytes).
+Output written on out/thesis_main.pdf (39 pages, 331155 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
- 23679 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 340 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 23663 words of extra memory for PDF output out of 24883 (max. 10000000)
 

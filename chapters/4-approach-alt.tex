@@ -139,3 +139,108 @@ A lazy agent would not even pick up the token from the table because then it wou
 
 \subsection{better random beginnig Token}
   The problem with this token form is when no agent is able to do anything useful. Then this way of distributing the token will not work. We could introduce another question that asks who can preform any action at all and then distribute the token at random amongst those agents.
+
+
+
+  The problem with the tokens is the allocation of the token in the beginning. Each allocation type brings advantages, but also has some disadvantages. Lets start with the straightforward allocation we used up to now.
+
+
+  \section{Asynchronous execution order}
+    The first execution order is seemingly random. Some undefined agent has the token in the beginning. The advantage is that you do not have to define anything in the beginning, but this is also a disadvantage, since this token is defined, but the agent that has it in the beginning is not.
+
+
+
+
+    There are three other ways to introduce a token to this game.
+    \begin{enumerate}
+      \item Table token - the token is lying on a table and one of the agents can take the token in the beginning. \\
+      The disadvantage becomes clear in the example with the dishwasher. No agent would take the token.
+      \item give token - in the specification of the game it is also specified which agent will have the token in the beginning. \\
+      The problem with this introduction is that in every new game, this has to be written in the definition of the game. In order for the game to be efficient, it should be given to a player who has found a plan.
+      \item random token - the token is given to a random agent in the beginning. If that agent can not preform any action it can pass the token to a player who can. \\
+      An agent who knows nothing and has no action will prevent the game from ever reaching a goal state.
+    \end{enumerate}
+
+  Each version has its own drawbacks. In every game, you have to know the occurring problem beforehand to know which token allocation is efficient.
+
+
+  %\section{Token versions}
+
+  %\subsection{table token}
+  %  $
+  %  A=
+  %  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  %  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  %  \{\text{Take\_Token}(agt, token) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \} \\
+  %  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  %  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj , |Token| = 1
+  %  $
+  %  \begin{itemize}
+  %    \item $
+  %      \text{Move\_R}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+1) \wedge \neg \text{At}(obj,pos) \rangle
+  %      $
+  %    \item $
+  %      \text{Move\_L}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-1) \wedge \neg \text{At}(obj,pos) \rangle
+    %    $
+  %    \item $
+    %    \text{Take\_Token}(agt, token) = \langle \neg \text{Has}(agt, token) \wedge \text{At}(token, table), \text{Has}(agt, token) \wedge \neg  \text{At}(token, table) \rangle
+  %      $
+  %    \item $
+  %      \text{Give\_Token}(agt, token, otheragt) = \langle
+  %      \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+  %      \text{Has}(otheragt, token)
+  %      \rangle
+  %    $
+  %  \end{itemize}
+
+  %  $s_0=\{\text{At(Hebel, N)}, \text{At(Token, Table)}\}$
+
+  %\subsection{give Token}
+  %  $
+  %  A=
+  %  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  %  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  %  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  %  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj , |Token| = 1
+    %$
+    %\begin{itemize}
+    %  \item $
+      %  \text{Move\_R}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+1) \wedge \neg \text{At}(obj,pos) \rangle
+    %    $
+    %  \item $
+    %    \text{Move\_L}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-1) \wedge \neg \text{At}(obj,pos) \rangle
+    %    $
+    %  \item $
+    %    \text{Give\_Token}(agt, token, otheragt) = \langle
+    %    \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+    %    \text{Has}(otheragt, token)
+    %    \rangle
+    %  $
+    %\end{itemize}
+
+    %$s_0=\{\text{At(Hebel, N), Has(agent} \in \mathcal{A},\text{Token)}\}$
+
+  %\subsection{random token}
+  %  $
+  %  A=
+  %  \{\text{Move\_R}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -2;1\}\} \cup \\
+  %  \{\text{Move\_L}(agt,obj,pos,token) \ | \ agt \in \mathcal{A} \ \& \ obj \in Obj \ \& \ pos \in \{ -1;2\}\} \\
+  %  \{\text{Give\_Token}(agt, token, otheragt) \ | \ agt \in \mathcal{A} \ \& \ token \in Token \ \& \ otheragt \in \mathcal{A}\backslash agt \} \\
+  %  \text{where} \ \forall \ agt \in \mathcal{A}, pos \in \{ -2;2\}, obj \in Obj , |Token| = 1
+  %  $
+  %  \begin{itemize}
+  %    \item $
+  %      \text{Move\_R}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos+1) \wedge \neg \text{At}(obj,pos) \rangle
+  %      $
+  %    \item $
+  %      \text{Move\_L}(agt,obj,pos,token) = \langle \text{At}(obj, pos) \wedge \text{Has}(agt, token) , \text{At}(obj, pos-1) \wedge \neg \text{At}(obj,pos) \rangle
+    %    $
+    %  \item $
+    %    \text{Give\_Token}(agt, token, otheragt) = \langle
+    %    \text{Has}(agt, token), \neg \text{Has}(agt, token) \wedge
+    %    \text{Has}(otheragt, token)
+    %    \rangle
+    %  $
+    %\end{itemize}
+
+    %$s_0=\{\text{At(Hebel, N), Has(randomagent} \in \mathcal{A},\text{Token)}\}$

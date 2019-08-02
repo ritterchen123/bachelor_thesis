@@ -1,6 +1,6 @@
 \chapter{Introduction}\label{chap:introduction}
 
-How would it be if we had a perfect execution order? \\
+How would it be if we had a perfect execution order?
 
 This thesis is trying to answer that question by looking at the different execution orders. In other pieces of writing about epistemic planning the execution order is a seemingly random one, usually unclear. This is easier to describe mathematically, but it also has some drawbacks. My thesis is trying to take these games and transform them into a game with a token. As you will see, this will have some advantages.
 
@@ -16,9 +16,19 @@ There are four different execution modes that are possible:
     The agents act one agent after the other, after the last agent is done they begin with the first agent again.
 \end{enumerate}
 We have found that the token based orders are a subset of the asynchronous orders, because all token based orders can also be ``a random'' asynchronous order, but not all asynchronous orders are a token based order. Also all round robin orders can be token based orders by accident, but not all token based orders are a round robin order.
-
 Because of this we only looked at token based orders in this thesis.
 
-``Epistemic planning is the enrichtment of planning with epistemic notions, that is, knowledge and belief.''
+\extend{How old is epistemic planning?}
+The field of epistemic dynamic logic is relativly young. It started with the ``Logics of public communications'' in 1989 \cite{plaza1989logics}.
 
-Epistemic planning is taking regular planning and enriching it with knowledge and belief. In regular planning, the world is simplified so that everyone knows everything there is to know about that particular microverse. But this is not the real world. In the real world, agents ofthen have only little knowledge and can therefore make only limited calculations on that world. To model that, we use epistemic logic.
+
+Epistemic planning is taking regular planning and enriching it with knowledge and belief. In regular planning, the world is simplified so that everyone knows everything there is to know about that particular microverse. But this is not the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations on that world. To model that, we use epistemic logic. To show that the agents each have different knowledge that can change over time, we describe the logic as being dynamic.
+
+\extend{What is the future of epistemic planning?}
+
+There are multiple ways this research could be used in the future, in the real world. One exmple is in autonomous driving. Two cars are standing across from each other on a bridge, only one car can pass. This problem could be solved with tokens.
+
+\extend{Why is this research relevant?}
+Autonomous driving, zusammenbrechen der kommunikation
+später dann auf Anwendung eingehen,
+Beispiel mit vier autos an einer Kreuzung, brauchen token
