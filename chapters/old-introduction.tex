@@ -123,3 +123,21 @@ For a more complete list we recommend to read Donald Knuth's paper on mathematic
       \draw (w1e1) -- node[above] {$2$} (w2e2);
     \end{tikzpicture}
     \]
+
+
+
+
+
+    There are four different execution modes that are possible:
+    \begin{enumerate}
+      \item Asynchronous \\
+        The agents move in a seemingly random order.
+      \item Concurrent \\
+        The agents can act at the same time.
+      \item token based \\
+        The agents need a special token to be able to act, only one agent has the token at a time.
+      \item round robin \\
+        The agents act one agent after the other, after the last agent is done they begin with the first agent again.
+    \end{enumerate}
+    We have found that the token based orders are a subset of the asynchronous orders, because all token based orders can also be ``a random'' asynchronous order, but not all asynchronous orders are a token based order. Also all round robin orders can be token based orders by accident, but not all token based orders are a round robin order.
+    Because of this we only looked at token based orders in this thesis.

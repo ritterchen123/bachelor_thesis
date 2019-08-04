@@ -1,6 +1,6 @@
 \chapter{Conclusion}\label{chap:conclusion}
 
-We looked at how the two different token orders solved the two main problems: Deadlocks and infinite executions. We discussed that there are three different ways to introduce a token and all except the takle token solve both problems. The table token doesen't solve the deadlock problem because there is the possibility that no agent takes the token off the table. This is illustrated in the following table:
+We looked at how the two different token orders solved the two main problems: Deadlocks and infinite executions. We discussed that there are three different ways to introduce a token and all except the takle token solve both problems. The table token does not solve the deadlock problem because there is the possibility that no agent takes the token off the table. This is illustrated in the following table:
 
 \begin{table}[h!]
 \centering
@@ -18,6 +18,6 @@ This means that there are positive results with the introduction of a token base
 
 Eager agents können weggelassen werden weil man mit Kosten gleich 1 die deadlocks und die infinite executions in den meisten fällen lösen kann. Mit den force tokens können die lazy agenten zu sachen gezwungen werden, es ist also egal ob die agents eager, overeager oder lazy sind.
 
-For future work, the way the token changes the searching of a plan should be researched. The searchtree of a plan might get a smaller width but also a deeper width.\\
+For future work, the way the token changes the searching of a plan should be researched. The searchtree of a plan might get a smaller width but also a deeper depth.\\
 There could also be future research in researching the fairness of the tokens. How do the tokens get passed from player to player and if that is fair. \\
-Another field of research for the future could be impatient players the table token execution order. An impatient player will wait for the other player to take the token first, but only for a limited amout of time.
+Another field of research for the future could be impatient players and the table token execution order. An impatient player will wait for the other player to take the token first, but only for a limited amout of time.

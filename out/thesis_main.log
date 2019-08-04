@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  2 AUG 2019 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  4 AUG 2019 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1107,12 +1107,32 @@ File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 \WF@everypar=\toks49
 Package: wrapfig 2003/01/31  v 3.6
 )
-\c@theorem=\count322
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 129.
-Package hyperref Info: Option `plainpages' set `false' on input line 129.
-\c@todos=\count323
-\c@extends=\count324
-\c@drafts=\count325
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count322
+\l_MT_multwidth_dim=\dimen282
+\origjot=\skip89
+\l_MT_shortvdotswithinadjustabove_dim=\dimen283
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen284
+\l_MT_above_intertext_sep=\dimen285
+\l_MT_below_intertext_sep=\dimen286
+\l_MT_above_shortintertext_sep=\dimen287
+\l_MT_below_shortintertext_sep=\dimen288
+)
+\c@theorem=\count323
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 132.
+Package hyperref Info: Option `plainpages' set `false' on input line 132.
+\c@todos=\count324
+\c@extends=\count325
+\c@drafts=\count326
 )
 (out/thesis_main.aux)
 \openout1 = `thesis_main.aux'.
@@ -1149,16 +1169,16 @@ Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
-\scratchdimen=\dimen282
+\scratchcounter=\count327
+\scratchdimen=\dimen289
 \scratchbox=\box66
-\nofMPsegments=\count327
-\nofMParguments=\count328
+\nofMPsegments=\count328
+\nofMParguments=\count329
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count329
-\MPscratchDim=\dimen283
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
+\MPscratchCnt=\count330
+\MPscratchDim=\dimen290
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
 \everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1186,7 +1206,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count332
+\c@section@level=\count333
 )
 LaTeX Info: Redefining \ref on input line 35.
 LaTeX Info: Redefining \pageref on input line 35.
@@ -1212,7 +1232,7 @@ File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
 Package auxhook Info: \AddLineBeginMainAux comes a little late,
 (auxhook)             because the main .aux file is already opened on input lin
 e 164.
-\BKM@id=\count333
+\BKM@id=\count334
 ))
 ABD: EveryShipout initializing macros
 LaTeX Info: Redefining \microtypecontext on input line 35.
@@ -1333,40 +1353,56 @@ chapter 1.
 [1
 
 
-]) (./chapters/2-relatedwork.tex [2] [3] [4
-
-
-]
+]) (./chapters/2-relatedwork.tex [2]
 chapter 2.
-) (./chapters/3-background.tex [5] [6]
+) (./chapters/3-background.tex [3
+
+
+] [4]
 chapter 3.
 (./figures/pictures/hebelbild.tex
-<figures/pictures/Hebelbild.png, id=121, 694.84593pt x 324.46219pt>
+<figures/pictures/Hebelbild.png, id=108, 694.84593pt x 324.46219pt>
 File: figures/pictures/Hebelbild.png Graphic file (type png)
 <use figures/pictures/Hebelbild.png>
 Package pdftex.def Info: figures/pictures/Hebelbild.png  used on input line 3.
 (pdftex.def)             Requested size: 347.4221pt x 162.23068pt.
-) [7
-
-
- <./figures/pictures/Hebelbild.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
  []
 
-[8]
+[5
+
+
+ <./figures/pictures/Hebelbild.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
+
+ []
+
+[6]
+Underfull \vbox (badness 2443) has occurred while \output is active []
+
+ [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
-[10]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 97.
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
+ [8]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 110.
+
+
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 97.
- [11] [12] [13])
-(./chapters/4-approach.tex [14]
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 110.
+ [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 169--172
+
+ []
+
+[11] [12]) (./chapters/4-approach.tex [13] [14
+
+
+]
 chapter 4.
 
 Overfull \hbox (6.09013pt too wide) in paragraph at lines 7--9
@@ -1374,18 +1410,25 @@ Overfull \hbox (6.09013pt too wide) in paragraph at lines 7--9
 er schreiben.)[][][] 
  []
 
-[15
+[15] [16]
+Overfull \hbox (7.38992pt too wide) in paragraph at lines 34--38
+\OML/lmm/m/it/10.95 takeToken[] \OT1/lmr/m/n/10.95 (-20) = \OMS/lmsy/m/n/10.95 
+h:\OML/lmm/m/it/10.95 hasToken[]\OMS/lmsy/m/n/10.95 8\OML/lmm/m/it/10.95 i \OMS
+/lmsy/m/n/10.95 2 A\OML/lmm/m/it/10.95 ; hasToken[]\OMS/lmsy/m/n/10.95 i8\OML/l
+mm/m/it/10.95 i; j \OMS/lmsy/m/n/10.95 2 A$ \T1/lmr/m/n/10.95 (-20) with $\OML/
+lmm/m/it/10.95 !\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 takeToken[]\OT1/l
+mr/m/n/10.95 (-20) ) =
+ []
 
-
-] [16] [17] (./figures/pictures/dishwasher.tex
+[17] [18] (./figures/pictures/dishwasher.tex
 <figures/pictures/dishwasher.png, id=209, 184.43906pt x 252.945pt>
 File: figures/pictures/dishwasher.png Graphic file (type png)
 <use figures/pictures/dishwasher.png>
 Package pdftex.def Info: figures/pictures/dishwasher.png  used on input line 3.
 
 (pdftex.def)             Requested size: 55.33214pt x 75.88408pt.
-) [18 <./figures/pictures/dishwasher.png>]
-Overfull \hbox (3.17805pt too wide) in paragraph at lines 91--106
+) [19]
+Overfull \hbox (3.17805pt too wide) in paragraph at lines 113--128
 \T1/lmr/m/n/10.95 (-20) if $\OML/lmm/m/it/10.95 a \OT1/lmr/m/n/10.95 (-20) = \O
 MS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 pre; []\OMS/lmsy/m/n/10.95 i$\T1/lmr/m/n
 /10.95 (-20) , then $\OML/lmm/m/it/10.95 tokenize \OMS/lmsy/m/n/10.95 ^^@ \OML/
@@ -1395,7 +1438,7 @@ lmm/m/it/10.95 force\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n
  []
 
 
-Overfull \hbox (13.36005pt too wide) in paragraph at lines 91--106
+Overfull \hbox (13.36005pt too wide) in paragraph at lines 113--128
 \T1/lmr/m/n/10.95 (-20) Moreover: $\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 (-
 20) (\OML/lmm/m/it/10.95 tokenize \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 f
 orce\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n/10.95 (-20) )) 
@@ -1406,13 +1449,14 @@ m/it/10.95 ![]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 giveToken[]\OT1/lmr
 /m/n/10.95 (-20) ) =
  []
 
-[19] [20]) (./chapters/6-conclusions.tex [21] [22
-
-
-]
+[20 <./figures/pictures/dishwasher.png>] [21]) (./chapters/6-conclusions.tex
+[22]
 chapter 5.
-) [23] (./todo_list.tex [24]
-\c@ct=\count334
+) [23
+
+
+] (./todo_list.tex [24]
+\c@ct=\count335
 ) (out/thesis_main.bbl [25
 
 
@@ -1430,29 +1474,30 @@ Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38158 strings out of 494435
- 694634 string characters out of 6173464
- 1030688 words of memory out of 5000000
- 41027 multiletter control sequences out of 15000+600000
- 620280 words of font info for 160 fonts, out of 8000000 for 9000
+ 38636 strings out of 494435
+ 703367 string characters out of 6173464
+ 1031694 words of memory out of 5000000
+ 41493 multiletter control sequences out of 15000+600000
+ 620446 words of font info for 162 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 67i,15n,77p,9237b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
+ 67i,15n,77p,9237b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
 -mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on out/thesis_main.pdf (39 pages, 331155 bytes).
+/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+sy8.pfb>
+Output written on out/thesis_main.pdf (39 pages, 352480 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
- 105 named destinations out of 1000 (max. 500000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
  23663 words of extra memory for PDF output out of 24883 (max. 10000000)
 

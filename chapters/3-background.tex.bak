@@ -1,15 +1,15 @@
 \chapter{Background}\label{chap:background}
 
-Imagine there is a lever between two players, Anne and Bill. It is upright in the middle position and has 5 positions in total. Anne thinks the lever should be pulled two positions to her side and Bill thinks the lever should be pulled two positions to his side.\\
+Imagine the following game between two players, Anne and Bill. It  involes a lever placed in between them. The lever is upright in the middle position and has five positions in total. Anne thinks the lever should be pulled two positions to her side and Bill thinks the lever should be pulled two positions to his side. This can be seen in figure \ref{leverexample}.\\
 \input{figures/pictures/Hebelbild} \\
 With the asynchronous execution order this game could be easily finished if Anne or Bill just pulled the lever two times in their direction. But just as easily this game could go on a really long time, if Anne and Bill pulled the lever alternating, once to the right and then to the left, then to the right again and so on. This could go on infinitely. With no set execution order, how can we prevent the game from going on infinitely?
 
+\section{Dynamic Epistemic Logic}
+In the following we will define and explain the core concepts of the Dynamic Epistemic Logic (DEL). DEL is a specific mathematical language used as the framework of this thesis.
 
 The definitions are taken from the ``Better eager than lazy'' (2018) \cite{bolander2018better} paper, the ``A gentle introduction to DEL'' (2017) \cite{bolander2017gentle} and the book ``Dynamic epistemic logic'' from Ditmarsch \cite{Ditmarsch2007}.
 
-\section{DEL}
-DEL, or Dynamic Epistemic Logic is a specific mathematical language used as the framework.
-Let $\mathcal{A}$ be a finite set of agents, in this case $\mathcal{A} =\{$Anne, Bill$\}$. Let $\mathcal{P}$ be a finite set of atomic propositions. Atomic propositions, like p or q, describe some affairs that can be true or false.
+Let $\mathcal{A}$ be a finite set of agents, from the example above this would be $\mathcal{A} =\{$Anne, Bill$\}$. Let $\mathcal{P}$ be a finite set of atomic propositions. Atomic propositions, like $p$ or $q$, describe some affairs that can be true or false.
 The epistemic language $\mathcal{L}_{\text{KC}}$ is: \\
 $$
 \varphi ::= \top \ | \ \bot \ | \ p \ | \ \neg \varphi \ | \ \varphi \wedge \varphi \ | \ K_i \varphi \ | \ C\varphi
@@ -18,22 +18,22 @@ $$
 with $p \in \mathcal{P}$ and $i \in \mathcal{A}$.
 $\top$ describes $\varphi$ as being true, $\bot$ as false.
 $K_i \varphi$ reads as ``Agent $i$ knows $\varphi$''. $C \varphi$ reads as ``it is common knowledge that $\varphi$ ''.
-Let's look back at the example. The two agents, $a$ (Anne) and $b$ (Bill) have two goal positions, goal $p$ (lever to the left) and $q$ (lever to the right). Anne knows that one goal position is the left, but does not know the other: $K_a p \wedge \neg K_a q$ . Bill knows that one goal position is the right, but does not know the other position: $\neg K_b  p \wedge K_b q$.
+From the example before, the two agents, $a$ (Anne) and $b$ (Bill) have two goal positions, goal $p$ (lever to the left) and $q$ (lever to the right). Anne knows that one goal position is the left, but does not know the other: $K_a p \wedge \neg K_a q$ . Bill knows that one goal position is the right, but does not know the other position: $\neg K_b  p \wedge K_b q$.
 
 
-Formulas are evaluated in epistemic models
+Formulas are evaluated in epistemic models \todo{not defined}
 $$
 \mathcal{M}=(W, (\sim_i)_{i \in \mathcal{A}}, V)
 $$
 with the domain $W$ being a nonempty finite set of worlds,
 $\sim_i$ being an equivalence relation called the indistinguishably relation for agent $i \in \mathcal{A}$ and $V : P \rightarrow \mathcal{P}(W)$ assigning a valuation to each atomic proposition.
 
-In the example above, Anne sees two worlds. One world where just the lever to the left is a goal, but also a world where another goal is the lever to the right. Those two worlds are indistinguishable for Anne.
+In the example above, Anne sees two worlds. One world where just the lever to the left is a goal, but also a world where another goal is the lever to the right. Those two worlds are indistinguishable for Anne. Let $w_1$ be the world where just the lever to the left is a goal and $w_2$ be the world where the goal is the lever to the left or to the right, then $w_1 \sim_a w_2$.
 
 
 For $W_d \subseteq W$, the pair $(\mathcal{M}, W_d)$ is called an epistemic state (or simply a state) and the worlds of $W_d$ are called designated worlds. A state is called global if $W_d=\{w\}$ for some world $w$ (called the actual world). We then often write $(\mathcal{M},w)$ instead of $(\mathcal{M},\{w\} )$. We use $S^{gl}(P,\mathcal{A})$ to denote the set of global states (or simply $S^{gl}$ if $P$ and $\mathcal{A}$ are clear from context). For any state $ s=(\mathcal{M}, W_d) $ we let $Globals(s)= \{ (\mathcal{M},w) | w \in W_d \} $.
 A state $(\mathcal{M}, W_d)$ is called a local state for agent $i$ if $W_d$ is closed under $\sim _i$ (that is, if $w \in W_d$ and $w \sim _i v $, then $v \in W_d$).
-Given a state $s=(\mathcal{M}, W_d)$ the associated local state of agent $i$, denoted $s^i$, is $(\mathcal{M},\{v|v\sim _i w \text{ and } w \in W_d\})$. Going from $s$ to $s^i$ amounts to a \textit{perspective shift} to the local perspective of agent i.
+Given a state $s=(\mathcal{M}, W_d)$ the associated local state of agent $i$, denoted $s^i$, is $(\mathcal{M},\{v|v\sim _i w \text{ and } w \in W_d\})$. Going from $s$ to $s^i$ amounts to a \textit{perspective shift} to the local perspective of agent $i$.
 
 Let $(\mathcal{M}, W_d)$ be a state on $P,\mathcal{A}$ with $\mathcal{M}=(W, (\sim_i)_{i \in \mathcal{A}}, V)$. For $i \in \mathcal{A}$, $p \in P$ and $\varphi, \psi \in \mathcal{L}_{\text{KC}}(P,\mathcal{A})$, we define truth as follows:
 \begin{align*}
@@ -88,7 +88,7 @@ For all $e\in E$, $\textit{eff}(e)$ is a conjunction of literals, that means ato
 For $E_d \subseteq E$, the pair $(\mathcal{E}, E_d)$ is called an epistemic action, or simply action and the events in $E_d$ are called a local action for agent $i$ when $E_d$ is closed under $\sim_i$. \\
 Each event of an action represents a different possible outcome.
 By using multiple events $e, e' \in E$ that are indistinguishable ($e \sim e' )$, it is possible to model only partially observable actions.\\
-If the event model has $E=\{e\}$, we will write $\mathcal{E}=\rangle pre(e), \textit{eff}(e)\langle$.
+If the event model has $E=\{e\}$, we will write $\mathcal{E}=\langle pre(e), \textit{eff}(e)\rangle$.
 
 The product update is used to specify the next state resulting from performing an action in a state.
 Let a state $s = (\mathcal{M},W_d)$ and an action $a=(\mathcal{E},E_d)$ be given with $\mathcal{M}=\langle W,(\sim_i)_{i \in \mathcal{A}}, V\rangle $ and $\mathcal{E}=\langle E, (\sim_i)_{i \in \mathcal{A}},pre, \textit{eff} \rangle$
@@ -104,7 +104,7 @@ $a=(\mathcal{E}, E_d)$ is applicable in $s=(\mathcal{M},W_d)$ if for all $w \in 
 \section{Planning tasks}
 
 
-A planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$ consists of a global state $s_0$ called the \textit{initial state}; a finite set of actions A; an owner function $\omega: A \rightarrow \mathcal{A}$; and a \textit{goal formula} $\gamma \in \mathcal{L}_{KC}$. We require that each $a \in A$ is local for $\omega(a)$.
+A planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$ consists of a global state $s_0$ called the \textit{initial state}; a finite set of actions A; an owner function $\omega: A \rightarrow \mathcal{A}$; and a \textit{goal formula} $\gamma \in \mathcal{L}_{KC}$. We require that each $a \in A$ is local for $\omega(a)$. \todo{define local}
 
 Consider the planning task from the beginning. For simplicity, in this example there is only one player and the lever can only be pulled once. The planning task $\langle s_0, \{ a_1 \} , \omega, p \rangle$ consists of the initial state $s_0 = $
 \begin{tikzpicture}
@@ -140,7 +140,7 @@ has the owner $\omega(a_1) = 1$ (player 1). Everything is fully observable for t
 \]
 
 
-A policy $\pi$ for $\Pi = \langle s_0, A, \omega, \gamma \rangle$ is a partial mapping $\pi: S^{gl} \hookrightarrow \mathcal{P}(A)$ such that :
+A policy $\pi$ for $\Pi = \langle s_0, A, \omega, \gamma \rangle$ is a partial mapping $\pi: S^{gl} \hookrightarrow \mathcal{P}(A)$ such that:
 \begin{enumerate}
   \item Applicability\\
     We require actions to be applicable in all states they are assigned to: \\
@@ -181,7 +181,7 @@ An execution of a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a maximal (fin
     Here the source of nondeterminism is from the possibility of nondeterministic action outcomes.
 \end{enumerate}
 
-The subjective cost of a policy profile $\pi_i$ is the lenght of the sequence of alternating global states and actions.
+The subjective cost of a policy profile $\pi_i$ is the length of the sequence of alternating global states and actions.
 
 
 If all agents have one strong policy in common which all of them follow, then at execution time, the goal is guaranteed to be eventually reached. If, however, each agent acts on its individual strong policy, then the incompatibility of the individual policies may prevent the agents from reaching the goal, even tough each individual policy is strong.

@@ -1,8 +1,11 @@
 \chapter{Introduction}\label{chap:introduction}
 
-How would it be if we had a perfect execution order?
+How would a perfect execution order look?
 
-This thesis is trying to answer that question by looking at the different execution orders. In other pieces of writing about epistemic planning the execution order is a seemingly random one, usually unclear. This is easier to describe mathematically, but it also has some drawbacks. My thesis is trying to take these games and transform them into a game with a token. As you will see, this will have some advantages.
+\todo{What is an execution order?}
+\todo{Who are the agents?}
+
+This thesis is trying to answer that question by looking at the different execution orders. In other pieces of writing \todo{which?} about epistemic planning the execution order is ofthen unspecified, called an asynchronous execution order. This is easier to describe mathematically, but it also has some drawbacks. We are now going to have a look at the different execution orders, especially at the token based execution order.
 
 There are four different execution modes that are possible:
 \begin{enumerate}
@@ -18,17 +21,21 @@ There are four different execution modes that are possible:
 We have found that the token based orders are a subset of the asynchronous orders, because all token based orders can also be ``a random'' asynchronous order, but not all asynchronous orders are a token based order. Also all round robin orders can be token based orders by accident, but not all token based orders are a round robin order.
 Because of this we only looked at token based orders in this thesis.
 
-\extend{How old is epistemic planning?}
-The field of epistemic dynamic logic is relativly young. It started with the ``Logics of public communications'' in 1989 \cite{plaza1989logics}.
+%\extend{How old is epistemic planning?}
+The field of epistemic dynamic logic is relatively young. It started with the work from Plaza (1989) \cite{plaza1989logics} about ``Logics of public communications''.
+Epistemic planning is taking regular planning task and enriching it with knowledge and belief. In regular planning, the world is simplified, so that everyone knows everything there is to know about that particular microverse. But this is only a very simplified model of the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations and beliefs on that world. To model that, we use epistemic logic. To show that the agents each have different knowledge that can change over time, we describe the logic as being dynamic.
 
+%\extend{What is the future of epistemic planning?}
 
-Epistemic planning is taking regular planning and enriching it with knowledge and belief. In regular planning, the world is simplified so that everyone knows everything there is to know about that particular microverse. But this is not the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations on that world. To model that, we use epistemic logic. To show that the agents each have different knowledge that can change over time, we describe the logic as being dynamic.
+There are multiple ways this research could be used in the future, in the real world. One example is in autonomous driving. Two cars are standing across from each other on a bridge, only one car can pass. This problem could be solved with tokens.
 
-\extend{What is the future of epistemic planning?}
+%\extend{Why is this research relevant?}
+%Autonomous driving, zusammenbrechen der kommunikation
+%später dann auf Anwendung eingehen,
+%Beispiel mit vier autos an einer Kreuzung, brauchen token
 
-There are multiple ways this research could be used in the future, in the real world. One exmple is in autonomous driving. Two cars are standing across from each other on a bridge, only one car can pass. This problem could be solved with tokens.
+``Many applications, such as robotic warehouses, must coordinate a large number of agents somultaneausly to carry out theis specific tasks.'' This problem is usually described as the multi-agent path finding problem.
 
-\extend{Why is this research relevant?}
-Autonomous driving, zusammenbrechen der kommunikation
-später dann auf Anwendung eingehen,
-Beispiel mit vier autos an einer Kreuzung, brauchen token
+The thought of researching if a different order solves some problems is also done in multi agent path finding problems. Here, the problem gets more complex the more agents there are and it is very similar to the del approach.
+
+\extend{This work is structured as follows:}
