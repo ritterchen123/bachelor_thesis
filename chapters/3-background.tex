@@ -1,11 +1,11 @@
 \chapter{Background}\label{chap:background}
 
-Imagine the following game between two players, Anne and Bill. It  involves a lever placed in between them. The lever is upright in the middle position and has five positions in total. Anne thinks the lever should be pulled two positions to her side and Bill thinks the lever should be pulled two positions to his side.
+Imagine the following task between two players, Anne and Bill. It  involves a lever placed in between them. The lever is upright in the middle position and has five positions in total. Anne thinks the lever should be pulled two positions to her side and Bill thinks the lever should be pulled two positions to his side.
 Anne does not know Bill has a goal on his side, and Bill does not know Anne has a goal on her side.
 This can be seen in figure \ref{leverexample}.\\
 \input{figures/pictures/Hebelbild} \\
 
-With the asynchronous execution order this game could be easily finished if Anne or Bill just pulled the lever two times in their direction. But just as easily this game could go on a really long time, if Anne and Bill pulled the lever alternating, once to the right and then to the left, then to the right again and so on. This could go on infinitely. With no set execution order, how can we prevent the game from going on infinitely?
+With the asynchronous execution order this task could be easily finished if Anne or Bill just pulled the lever two times in their direction. But just as easily this task could go on a really long time, if Anne and Bill pulled the lever alternating, once to the right and then to the left, then to the right again and so on. This could go on infinitely. With no set execution order, how can we prevent the task from going on infinitely?
 
 \section{Dynamic Epistemic Logic}
 In the following we will define and explain the core concepts of the Dynamic Epistemic Logic (DEL). DEL is a specific mathematical language used as the framework of this thesis.
@@ -31,13 +31,17 @@ $$
 with the domain $W$ being a nonempty finite set of worlds,
 $\sim_i$ being an equivalence relation called the indistinguishably relation for agent $i \in \mathcal{A}$ and $V : P \rightarrow \mathcal{P}(W)$ assigning a valuation to each atomic proposition.
 
-In the example above, Anne sees two worlds. One world where just the lever to the left is a goal, but also a world where another goal is the lever to the right. Those two worlds are indistinguishable for Anne. Let $w_1$ be the world where just the lever to the left is a goal and $w_2$ be the world where the goal is the lever to the left or to the right, then $w_1 \sim_a w_2$.
+
+Using Anne and Bill as an Example, Anne only knows $p$ is true. She does not know if $p,q$ or $p, \neg q$, so she sees two worlds. Those two worlds are indistinguishable for Anne. Bill only knows $q$ is true, he does not know if $p,q$ or $\neg p,q$. One world where just the lever to the left is a goal, a world where another goal is the lever to the right and a world where just the lever to the right is a goal. Let $w_1$ be the world where just the lever to the left is a goal, $w_2$ be the world where the goal is the lever to the left or to the right and $w_3$ be the world where the goal is the lever to the right. Then $w_1 \sim_\text{Anne} w_2$ and $w_2 \sim_\text{Bill} w_2$. A graphic representation of this would be the global state $s = (\mathcal{M}, w_2)$ with the nodes representing the worlds and the edges representing the indistinguishably relation. The circle around a node represent designated worlds.
 \[
+s=
 \begin{tikzpicture}
-  \draw (-2,0) node[world, label=below:{$w_1$}] (w1) {};
+  \draw (-2,0) node[world, label=below:{$w_1: p, \neg q$}] (w1) {};
   \draw (0,0) node [desig] {}; % designation
-  \draw (0,0) node[world, label=below:{$w_2$}] (w2) {};
+  \draw (0,0) node[world, label=below:{$w_2: p,q$}] (w2) {};
+  \draw (2,0) node[world, label=below:{$w_3: \neg p, q$}] (w3) {};
   \draw (w1) -- node[above] {Anne} (w2);
+  \draw (w2) -- node[above] {Bill} (w3);
 \end{tikzpicture}
 \]
 
@@ -46,7 +50,9 @@ For $W_d \subseteq W$, the pair $(\mathcal{M}, W_d)$ is called an epistemic stat
 A state $(\mathcal{M}, W_d)$ is called a local state for agent $i$ if $W_d$ is closed under $\sim _i$ (that is, if $w \in W_d$ and $w \sim _i v $, then $v \in W_d$).
 Given a state $s=(\mathcal{M}, W_d)$ the associated local state of agent $i$, denoted $s^i$, is $(\mathcal{M},\{v|v\sim _i w \text{ and } w \in W_d\})$. Going from $s$ to $s^i$ amounts to a \textit{perspective shift} to the local perspective of agent $i$.
 
-From the example above, Anne has the local state $(\mathcal{M},\{w_1,w_2\})$
+
+From the example above, Anne has the local state $(\mathcal{M},\{w_1,w_2\})$ and Bill has the local state $(\mathcal{M},\{w_2,w_3\})$.
+
 
 Let $(\mathcal{M}, W_d)$ be a state on $P,\mathcal{A}$ with $\mathcal{M}=(W, (\sim_i)_{i \in \mathcal{A}}, V)$. For $i \in \mathcal{A}$, $p \in P$ and $\varphi, \psi \in \mathcal{L}_{\text{KC}}(P,\mathcal{A})$, we define truth as follows:
 \begin{align*}
@@ -77,24 +83,14 @@ Let $(\mathcal{M}, W_d)$ be a state on $P,\mathcal{A}$ with $\mathcal{M}=(W, (\s
 \end{align*}
 where $\sim^*$ is the transitive closure of $\bigcup_{i \in \mathcal{A}}\sim_i$.
 
-Using Anne and Bill as an Example, Anne only knows $p$ is true. She cannot distinguish between $p,q$ and $p, \neg q$. Bill only knows $q$ is true, he cannot distinguish between $p,q$ and $\neg p,q$. A graphic representation of this would be the global state $s = (\mathcal{M}, w_2)$ with the nodes representing the worlds and the edges representing the indistinguishably relation. The circle around a node represent designated worlds.
-\[
-s=
-\begin{tikzpicture}
-  \draw (-2,0) node[world, label=below:{$w_1: p, \neg q$}] (w1) {};
-  \draw (0,0) node [desig] {}; % designation
-  \draw (0,0) node[world, label=below:{$w_2: p,q$}] (w2) {};
-  \draw (2,0) node[world, label=below:{$w_3: \neg p, q$}] (w3) {};
-  \draw (w1) -- node[above] {Anne} (w2);
-  \draw (w2) -- node[above] {Bill} (w3);
-\end{tikzpicture}
-\]
-We have the designated world $(M,w_2)$. THis designated world says nothing about the knowledge of Anne. She still cannot destinguish between if $q$ is true or not. $(M,w_2) \models \neg K_aq \vee \neg K_a \neg q$.
-Performing a perspective sift on $s=(M,w_2)$ for Anne is $(M,w_2)^{\text{Anne}} =(M,\{w_1,w_2\})$. This perspective shift gives us $(M,\{w_1,w_2\})\not\models q$ and $(M,\{w_1,w_2\})\not\models \neg q$.
+
+From the example above, in $(M,w_2)$, $w_2$ is the designated world. This designated world says nothing about the knowledge of Anne. She still does not know if $q$ is true or not. $(M,w_2) \models \neg K_aq \vee \neg K_a \neg q$.
+Performing a perspective sift on $s=(M,w_2)$ for Anne is $(M,w_2)^{\text{Anne}} =(M,\{w_1,w_2\})$. This perspective shift gives us $(M,\{w_1,w_2\})\not\models q$ and $(M,\{w_1,w_2\})\not\models \neg q$. This way, we can verify that the knowledge from the global world for an agent by performing a perspective shift for that agent.
+
 
 \subsection{Epistemic Actions and Product Updates}
 
-An event model is $\mathcal{E} = \langle E, (\sim_i)_{i\in \mathcal{A}}, pre, \textit{eff}  \rangle$ where the domain $E$ is a non-empty finite set of events; $\sim_i \subseteq E \times E$ is an equivalence relation called the indistinguishably relation for agent $i$;
+An event model is a 4-tuple $\mathcal{E} = \langle E, (\sim_i)_{i\in \mathcal{A}}, pre, \textit{eff}  \rangle$ where the domain $E$ is a non-empty finite set of events; $\sim_i \subseteq E \times E$ is an equivalence relation called the indistinguishably relation for agent $i$;
 $pre:E \rightarrow \mathcal{L}_{KC}$ assigns a precondition to each event;
 and $\textit{eff}:E \rightarrow \mathcal{L}_{KC}$ assigns a post condition, or effect to each event.
 For all $e\in E$, $\textit{eff}(e)$ is a conjunction of literals, that means atomic propositions and their negations, including $\top$ and $\bot$.\\
@@ -106,21 +102,96 @@ If the event model has $E=\{e\}$, we will write $\mathcal{E}=\langle pre(e), \te
 The product update is used to specify the next state resulting from performing an action in a state.
 Let a state $s = (\mathcal{M},W_d)$ and an action $a=(\mathcal{E},E_d)$ be given with $\mathcal{M}=\langle W,(\sim_i)_{i \in \mathcal{A}}, V\rangle $ and $\mathcal{E}=\langle E, (\sim_i)_{i \in \mathcal{A}},pre, \textit{eff} \rangle$
 then the product update of $s$ with $a$ is defined as $s \otimes a = ((W',(\sim_i')_{i \in \mathcal{A}}, W_d'))$ where :
+
  \begin{itemize}
-   \item a new world, emerging from the old world with all executable actions \\
+   \item each world is paired up with all applicable events \\
    $W'=\{(w,e)\in W \times E ~|~ \mathcal{M}, w \models pre(e)\};$
-   \item new worlds are indistinguishable if the old world and the events are indistinguishable \\
+   \item new worlds are indistinguishable if the old worlds and the events are indistinguishable \\
    $\sim_i'=\{((w,e),(w',e')) \in W'\times W' ~|~ w \sim_i w' \text{ and } e \sim_i e'\};$
-   \item all propositions become true if the proportions occurred in the effect of the event or the proposition was positive in the world bevore and did not appear negative in the effect \\
+   \item propositions become true if the proposition occurred as a positive literall in the effect of the event or the proposition was satisfied in the world before and did not appear negative in the effect \\
    $V'(p) = \{ (w,e) \in W' ~|~ \textit{eff}(e) \models p \text{ or } (\mathcal{M},w \models p \text{ and } \textit{eff}(e)\not \models \neg p)\};$
-   \item designated worlds emerge from designated predecessor worlds and designated events \\
+   \item worlds are designated if both predecessor world and event are designated.
+   emerge from designated predecessor worlds and designated events \\
    $W_d' = \{ (w,e) \in W' ~|~ w \in W_d \text{ and } e \in E_d\}$.
  \end{itemize}
+
 $a=(\mathcal{E}, E_d)$ is applicable in $s=(\mathcal{M},W_d)$ if for all $w \in W_d$ there is an event $e \in E_d$ so that $(\mathcal{M},w) \models pre(e)$.
 
-\todo{Announcment action}
+Let us imagine a planning task between Lea and Max. Lea puts two cards face down in front of Max. The goal is that Max picks up the queen. The problem here is that Max does not know where the queen is. \\
+Lea has put the queen to the right, so $qR$.
 
-\todo{Sensing Action}
+\[
+s=
+\begin{tikzpicture}
+  \draw (-2,0) node[world, label=below:{$w_1: \neg qR$}] (w1) {};
+  \draw (0,0) node [desig] {}; % designation
+  \draw (0,0) node[world, label=below:{$w_2: qR$}] (w2) {};
+  \draw (w1) -- node[above] {Max} (w2);
+\end{tikzpicture}
+\]
+
+There are tow types of actions that could be performed to solve this problem:
+\begin{enumerate}
+  \item Announcement actions \\
+    Lea could tell Max where she put the queen. $\omega(a_{\text{announcement}})=\text{Lea}$
+
+    \[
+    \begin{tikzpicture}
+      \draw (-2,0) node[world, label=below:{$w_1: \neg qR$}] (w1) {};
+      \draw (0,0) node [desig] {}; % designation
+      \draw (0,0) node[world, label=below:{$w_2: qR$}] (w2) {};
+      \draw (w1) -- node[above] {Max} (w2);
+    \end{tikzpicture}
+    %
+    ~\otimes~
+    %
+    \begin{tikzpicture}
+      \draw (0,0) node [desig] {}; % designation
+      \draw (0,0) node[world, label=below:{$e_1: \langle qR, \top \rangle $}] (w1) {};
+    \end{tikzpicture}
+    %
+    ~=~
+    %
+    \begin{tikzpicture}
+      \draw (0,0) node [desig] {};
+      \draw (0,0) node[world, label=below:{$(w_2, e_1): qR$}] (w1e1) {};
+    \end{tikzpicture}
+    \]
+
+
+
+  \item Sensing actions \\
+    Max could look at the left card, then he knows where the queen is.
+    $\omega(a_{\text{sense}})=\text{Max}$
+
+    \[
+    \begin{tikzpicture}
+      \draw (-2,0) node[world, label=below:{$w_1: \neg qR$}] (w1) {};
+      \draw (0,0) node [desig] {}; % designation
+      \draw (0,0) node[world, label=below:{$w_2: qR$}] (w2) {};
+      \draw (w1) -- node[above] {Max} (w2);
+    \end{tikzpicture}
+    %
+    ~\otimes~
+    %
+    \begin{tikzpicture}
+      \draw (-2,0) node[world, label=below:{$e_1: \langle \top, qR \rangle $}] (e1) {};
+      \draw (0,0) node [desig] {}; % designation
+      \draw (0,0) node[world, label=below:{$e_2: \langle \top, qR \rangle $}] (e2) {};
+      \draw (e1) -- node[above] {Max} (e2);
+    \end{tikzpicture}
+    %
+    ~=~
+    %
+    \begin{tikzpicture}
+      \draw (0,0) node [desig] {};
+      \draw (0,0) node[world, label=below:{$(w_2, e_1): qR$}] (w1e1) {};
+    \end{tikzpicture}
+    \]
+
+\end{enumerate}
+
+
 
 \section{Planning tasks}
 
@@ -168,9 +239,10 @@ A policy $\pi$ for $\Pi = \langle s_0, A, \omega, \gamma \rangle$ is a partial m
     for all $a \in S^{gl}, a \in \pi(s): a$ is applicable in $s$.
   \item Uniformity \\
     If the policy $\pi$ prescribes some action $a$ to agent $i$ in state $s$ and agent $i$ cannot distinguish $s$ from some other state $t$, then $\pi$ has to prescribe the same action $a$ for $i$ in $t$ as well: \\
-    for all $s,t \in S^{gl} $ such that $ s^{\omega(a)} = t^{\omega(a)}, a \in \pi(s): a \in \pi(t)$ \\
+    for all $s,t \in S^{gl} $ such that $ s^{\omega(a)} = t^{\omega(a)}, a \in \pi(s): a \in \pi(t)$
 
-    \todo{Counterexample with queen}
+
+    In the planning task between Lea and Max, a policy that perscribes him to pick up the queen right after Lea put down the cards is not a valid policy.
 
   \item Determinism \\
     We require $\pi$ to be unambiguous for all agents in the sense that in each state $s$ where an agent $i$ is supposed to act according to $\pi$, $\pi$ will always prescribe the same action for agent $i$.
@@ -187,15 +259,19 @@ An execution of a policy $\pi$ from a global state $s_0$ is a maximal (finite or
 \end{enumerate}
 An execution is called successful for a planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$, if it is a finite execution $(s_0, a_1, s_1,...,a_n, s_n)$ such that $s_n \models \gamma$.
 
-\extend{Example: Anna lets Bill pull the lever to the right. Globally this makes sense, since that is Bills goal. But individually, this makes no sense at all because Anne doesent know Bills goal.}
+%\extend{Example: Anna lets Bill pull the lever to the right. Globally this makes sense, since that is Bills goal. But individually, this makes no sense at all because Anne doesent know Bills goal.}
 
-\todo{Geht das hier etwas schöner?}
-We now want to restrict our focus to policies that are guaranteed to achieve the goal after a finite number of steps. More formally, all of their executions must be successful. As in nondeterministic planning, such policies are called strong (Cimatti et al. 2003 \cite{cimattietal}) \todo{Quelle lesen}.
+In the lever example, a policy could be that, starting in the position with the lever being in the middle, Bill pulls the lever to the right and then to the right again. This is a policiy that satisfies all properties and where the last state satisfies the goal formula. The execution of the policy is finite and successful. \\
+For Bill, this is a reasonable policy. It satisfies the goal formula he knows to be true, with the lever being at the far right position. But for Anne, it is not a reasonable policy because she can not see that the execution of this policy will satisfy the goal formula.
 
+%\todo{Geht das hier etwas schöner?}
+We now want to restrict our focus to policies that are guaranteed to achieve the goal after a finite number of steps. More formally, all of their executions must be successful. As in nondeterministic planning, such policies are called strong (Cimatti et al. 2003 \cite{cimattietal}).
 For a planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$, a policy $\pi$ is called strong if $s_0 \in \text{Dom}(\pi) \cup \{s \in S^{gl} ~|~ s \models \gamma\}$ and for each $s \in \text{Dom}(\pi)$, any execution of $\pi$ from $s$ is successful for $\Pi$. A planning task is called solvable if a strong policy for $\Pi$ exists.
 For $ i \in \mathcal{A} $ , we call a policy $i$-strong if it is strong and  $Globals(s_0^i ) \subseteq \text{Dom}(\pi) \cup\{ s \in S^{gl} ~|~ s \models \gamma \}$.
 
 When a policy is i-strong it means that the policy is strong and defined on all the global states that agent $i$ cannot indistinguish between. It follows directly from the definition that any execution of an $i$-strong policy from any of those initially indistinguishable states will be successful. So if agent $i$ comes up with an $i$-strong policy, agent $i$ knows the policy to be successful.
+
+The policy from above, with Bill pulling the lever to the right twice is Bill-strong but not Anne-strong.
 
 Sometimes the agents cannot coordinate their plans but rather have to come up with plans individually. These plans can differ a lot, the agents ofthen have different knowledge about the states, the actions and therefore the action outcomes. For this reason we will define a policy profile for a planning task $\Pi$ to be a family $(\pi_i)_{i \in \mathcal{A}}$ where each $\pi_i$ is a policy for $\Pi$. We assume actions to be instantaneous and executed asynchronously. This leads to the following generalization:
 
@@ -209,3 +285,13 @@ An execution of a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a maximal (fin
 
 
 If all agents have one strong policy in common which all of them follow, then at execution time, the goal is guaranteed to be eventually reached. If, however, each agent acts on its individual strong policy, then the incompatibility of the individual policies may prevent the agents from reaching the goal, even tough each individual policy is strong.
+
+ 
+
+The cost of a apolicy can be defined as its worst-case execution length, the number of actions in its longest possible execution. An optimal policy in one with minimal costs. Due to partial observability and different knowledge, the agents might assign different costs to the same policy and therefore the costs are subjective. \\
+Let $\pi$ be a strong policy for a planning task $\Pi$. The perspecitve-sensitive cost (or simply cost) of $\pi$ from a state $s\in Dom(\pi)$, denoted $\kappa_{\pi}(s)$ is defined as:
+$$\kappa_{\pi}(s) =
+\begin{cases}
+0 \qquad \text{if there exists no } a \in \pi(s)\\
+1+ \max_{a\in \pi(s), s'\in Globals(s^{\omega(a)} \otimes a)} \kappa_{\pi}(s') \qquad \text{else.}
+\end{cases}$$

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{plaza1989logics}
 J.~Plaza, ``Logics of public announcements,'' in {\em Proceedings 4th
@@ -9,6 +9,22 @@ T.~Bolander, T.~Engesser, R.~Mattm{\"u}ller, and B.~Nebel, ``Better eager than
   lazy? how agent types impact the successfulness of implicit coordination,''
   in {\em Sixteenth International Conference on Principles of Knowledge
   Representation and Reasoning}, 2018.
+
+\bibitem{bolander2011epistemic}
+T.~Bolander and M.~B. Andersen, ``Epistemic planning for single-and multi-agent
+  systems,'' {\em Journal of Applied Non-Classical Logics}, vol.~21, no.~1,
+  pp.~9--34, 2011.
+
+\bibitem{nebel2019implicitly}
+B.~Nebel, T.~Bolander, T.~Engesser, and R.~Mattm{\"u}ller, ``Implicitly
+  coordinated multi-agent path finding under destination uncertainty: success
+  guarantees and computational complexity,'' {\em Journal of Artificial
+  Intelligence Research}, vol.~64, pp.~497--527, 2019.
+
+\bibitem{loucks1997system}
+L.~K. Loucks and A.~A. Shaheen, ``System and method for multi-level token
+  management for distributed file systems,'' May~27 1997.
+\newblock US Patent 5,634,122.
 
 \bibitem{ray2012execution}
 S.~Ray and A.~De~Sarkar, ``Execution analysis of load balancing algorithms in
