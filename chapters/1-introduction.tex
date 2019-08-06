@@ -8,19 +8,17 @@
 %This thesis is trying to answer that question by looking at the different execution orders. In other pieces of writing \todo{which?} about epistemic planning the execution order is often unspecified, called an asynchronous execution order. This is easier to describe mathematically, but it also has some drawbacks. We are now going to have a look at the different execution orders, especially at the token based execution order.
 
 
-Implicit coordination is a technique for planning and coordination of multi-agent systems in which the agents try to collaboratively reach a joint goal. The knowledge and abilities needed to reach a goal can be distributed among the agents. With no centralized coordination instance, the agents now need to plan individually and decentrally execute their plans.
+Implicit coordination is a technique for planning and coordination of multi-agent systems in which the agents try to collaboratively reach a joint goal. The knowledge and abilities needed to reach a goal can be distributed among the agents. With no centralized coordination instance, the agents need to plan individually and decentrally execute their plans.
 
 
 %\extend{How old is epistemic planning?}
 The field of dynamic epistemic logic is relatively young. It started with the work from Plaza \cite{plaza1989logics} about ``Logics of public communications''.
-\todo{
-Epistemic planning is taking regular planning task and enriching it with knowledge and belief}
 Epistemic planning investigates techniques and tools of automated planning with formal semantics of communicative actions and knowledge representation.
 In regular planning, the world is simplified, so that everyone knows everything there is to know about that particular microverse. But this is only a very simplified model of the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations and beliefs on that world. To model that, we use epistemic logic. To show that the agents each have different knowledge that can change over time, we describe the logic as being dynamic.
 
-With the asynchronous execution order, every agent can intervene in the execution order at any time. This can potentially harm the execution and prevent the agents from reaching a goal. For example, if two agents have opposing goals with no knowledge about the other agents' goal and the common goal is to reach one of those goals, then one agent would always undo the actions of the other agent.
+With the asynchronous execution order, every agent can intervene in the execution order at any time. This can potentially harm the execution and prevent the agents from reaching a goal. For example, if two agents have opposing goals with no knowledge about the other agents' goal and the common goal is to reach one of the individual goals, then one agent would always undo the actions of the other agent.
 
-To prevent this from happening, we want to exclude all agents except for the acting agent from taking action. The acting agent should also be able to specify the next acting agent. To model this, we used a token that the acting agent can pass on to the next agent. Only an agent with the token  is allowed to participate.
+To prevent this from happening, we want to exclude all agents except for the acting agent from taking action. The acting agent should also be able to specify the next acting agent. To model this, we used a token that the acting agent can pass on to the next agent. Only the agent with the token  is allowed to participate.
 
 
 %\extend{What is the future of epistemic planning?}
@@ -36,5 +34,5 @@ To prevent this from happening, we want to exclude all agents except for the act
 
 %The thought of researching if a different order solves some problems is also done in multi agent path finding problems. Here, the problem gets more complex the more agents there are and it is very similar to the DEL approach.
 
-This work is structured as follows:
-In section 2, we are going to give a brief overview of the related work to this thesis and highlight, how this thesis is building up from that work. In section 3 we are going to introduce the formal framework, dynamic epistemic logic (DEL) with modeling beliefs, states and actions. This logic is explained using a specific example, introduced in the beginning. In Section 4, we are going to formally introduce tokens to an existing planning problem and show how this approach solves infinite executions and deadlocks.
+This thesis is structured as follows:
+In section 2, we are going to give a brief overview of the related work to this thesis and highlight how this thesis is built on that work. In section 3 we will introduce the formal framework, dynamic epistemic logic (DEL) with modeling beliefs, states and actions. This logic is explained using a specific example, introduced in the beginning. In Section 4, we are going to formally introduce tokens to an existing planning problem and show how this approach solves infinite executions and deadlocks. In Section 5 we have the Conclusion of this thesis and the future work still nedded to be done.

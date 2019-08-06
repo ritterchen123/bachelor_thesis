@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  6 AUG 2019 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  6 AUG 2019 20:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1375,20 +1375,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
 
  <./figures/pictures/Hebelbild.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
 
  []
 
-[6] [7] [8]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 108.
+[6] [7]
+Underfull \vbox (badness 1286) has occurred while \output is active []
 
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
+ [8]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 107.
+
+
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 108.
- [9] [10] [11] [12]
-[13]) (./chapters/4-approach.tex [14]
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 107.
+ [9] [10] [11] [12] [13])
+(./chapters/4-approach.tex [14]
 chapter 4.
 [15
 
@@ -1403,7 +1407,7 @@ Token[]$\T1/lmr/m/n/10.95 (-20) . $\OML/lmm/m/it/10.95 V[]\OT1/lmr/m/n/10.95 (-
  []
 
 [16] [17] [18] (./figures/pictures/dishwasher.tex
-<figures/pictures/dishwasher.png, id=208, 184.43906pt x 252.945pt>
+<figures/pictures/dishwasher.png, id=207, 184.43906pt x 252.945pt>
 File: figures/pictures/dishwasher.png Graphic file (type png)
 <use figures/pictures/dishwasher.png>
 Package pdftex.def Info: figures/pictures/dishwasher.png  used on input line 3.
@@ -1454,11 +1458,11 @@ Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38614 strings out of 494435
- 703292 string characters out of 6173464
+ 38616 strings out of 494435
+ 703319 string characters out of 6173464
  1032694 words of memory out of 5000000
- 41489 multiletter control sequences out of 15000+600000
- 620186 words of font info for 160 fonts, out of 8000000 for 9000
+ 41488 multiletter control sequences out of 15000+600000
+ 620352 words of font info for 162 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  67i,21n,77p,9237b,766s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
@@ -1475,10 +1479,10 @@ m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
 y10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmsy8.pfb>
-Output written on out/thesis_main.pdf (39 pages, 370565 bytes).
+Output written on out/thesis_main.pdf (39 pages, 369815 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
- 324 compressed objects within 4 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
  23663 words of extra memory for PDF output out of 24883 (max. 10000000)
 

@@ -54,14 +54,14 @@ With $s_0$ depending on the way the token should be introduced to the token:
     $V(randomToken_i)=\{w_i|w \in W\}$ \\
     $W^{randomToken}_d=\{w_i|w\in W_d, i\in \mathcal{A}\}$ \\
     $s_0^{randomToken}=\langle W_{randomToken}, \sim_{randomToken}, V_{randomToken}, W_{randomToken} \rangle$ \\
-    The intuition behind this is duplicating the model for each agent. Because then there are multiple designated worlds, this leads to nondeterminism between the worlds.
+    The intuition behind this is duplicating the model for each agent. Because then there are multiple designated worlds, which leads to nondeterminism between the worlds.
 \end{enumerate}
 
 
 
 Then $ \Pi^{\text{Token}} = \langle s_0^{\text{Token}}, A ^{\text{Token}}, \omega ^{\text{Token}}, \gamma \rangle $.
 
-The action $giveToken$ can have different costs. One option would be to have the the action cost nothing, then the overall cost of the plan would not change. The problem with this is it does not prevent the agents from just passing the token around without a goal. The other option is that the action has the cost 1, then the agents will not just pass the token around,, they will prefer to act themselves if it is more or equally efficient than to let someone else act before handing the token to the next agent.
+The action $giveToken$ can have different costs. One option would be to have the the action cost nothing, then the overall cost of the plan would not change. The problem with this is it does not prevent the agents from just passing the token around without a goal. The other option is that the action has the cost 1, then the agents will not just pass the token around, they will prefer to act themselves if it is more or equally efficient than to let someone else act before handing the token to the next agent.
 
 In searching for the optimal plan the search tree can have a smaller width, because the amount of agents that could perform the next action is limited. Therefore the search tree will probably have a deeper depth, because the action handing off the token will also have to be modeled. This could be researched in the future.
 
@@ -150,7 +150,7 @@ With $s_0$ depending on the way the token should be introduced to the token:
     $W^{randomToken}_d=\{w_i|w\in W_d, i\in \mathcal{A}\}$ \\
     $s_0^{randomToken}=\langle W_{randomToken}, \sim_{randomToken}, V_{randomToken}, W^{randomToken}_d \rangle$ \\
     \todo{Wie modelliere ich hier doneAction rein?}
-    The intuition behind this is duplicating the model for each agent. Because then there are multiple designated worlds, this leads to nondeterminism between the worlds.
+    The intuition behind this is duplicating the model for each agent. Because then there are multiple designated worlds, which leads to nondeterminism between the worlds.
 \end{enumerate}
 
 
