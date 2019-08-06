@@ -4,9 +4,9 @@
 \contentsline {chapter}{\numberline {3}Background}{5}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Dynamic Epistemic Logic}{6}{section.3.1}% 
 \contentsline {subsection}{\numberline {3.1.1}Epistemic Actions and Product Updates}{9}{subsection.3.1.1}% 
-\contentsline {section}{\numberline {3.2}Planning tasks}{11}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.1.2}Planning tasks}{11}{subsection.3.1.2}% 
 \contentsline {chapter}{\numberline {4}The tokenized approach}{15}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Infinite executions to finite executions}{16}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}The prevention of deadlocks}{19}{section.4.2}% 
 \contentsline {chapter}{\numberline {5}Conclusion}{25}{chapter.5}% 
-\contentsline {chapter}{Bibliography}{28}{chapter*.8}% 
+\contentsline {chapter}{Bibliography}{28}{chapter*.7}% 

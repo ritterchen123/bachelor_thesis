@@ -423,11 +423,6 @@ INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT chapters/4-approach.tex
 INPUT chapters/4-approach.tex
-INPUT figures/pictures/dishwasher.tex
-INPUT figures/pictures/dishwasher.tex
-INPUT figures/pictures/dishwasher.png
-INPUT ./figures/pictures/dishwasher.png
-INPUT ./figures/pictures/dishwasher.png
 INPUT chapters/6-conclusions.tex
 INPUT chapters/6-conclusions.tex
 INPUT out/thesis_main.bbl
