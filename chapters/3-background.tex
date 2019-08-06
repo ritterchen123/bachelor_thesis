@@ -3,7 +3,7 @@
 Imagine the following task between two players, Anne and Bill. Between Anne and Bill is a lever in the middle position and has five positions in total. Anne thinks the lever should be pulled two positions to her side and Bill thinks the lever should be pulled two positions to his side.
 Anne does not know Bill has a goal on his side, and Bill does not know Anne has a goal on her side.
 This can be seen in figure \ref{leverexample}.\\
-\input{figures/pictures/Hebelbild} \\
+\input{figures/pictures/hebelbild} \\
 
 With the asynchronous execution order this task could be easily finished if Anne or Bill just pulled the lever two times in their direction. But just as easily this task could go on a really long time if Anne and Bill pulled the lever alternating, once to the right and then to the left, then to the right again and so on. This could go on infinitely. With no set execution order, how can we prevent the task from going on infinitely? To answer this question we first need to introduce the formal framework.
 
@@ -32,7 +32,7 @@ with the domain $W$ being a nonempty finite set of worlds,
 $\sim_i$ being an equivalence relation called the indistinguishably relation for agent $i \in \mathcal{A}$ and $V : \mathcal{P} \rightarrow \mathcal{P}(W)$ assigning a valuation to each atomic proposition.
 
 
-Using Anne and Bill as an example, Anne only knows $p$ is true. She does not know if $p \land q$ or $p \land \neg q$, so she sees two worlds. Those two worlds are indistinguishable for Anne. Bill only knows $q$ is true, he does not know if $p \land q$ or $\neg p \land q$. One world where just the lever to the left is a goal, a world where another goal is the lever to the right and a world where just the lever to the right is a goal. Let $w_1$ be the world where just the lever to the left is a goal, $w_2$ be the world where the goal is the lever to the left or to the right and $w_3$ be the world where the goal is the lever to the right. Then $w_1 \sim_\text{Anne} w_2$ and $w_2 \sim_\text{Bill} w_3$. A graphic representation of this would be the global state $s = (\mathcal{M}, w_2)$ with the nodes representing the worlds and the edges representing the indistinguishably relation. The circle around a node represent designated worlds. In all graphic representations in this thesis we usually omit reflexive edges and edges that can be implied by transivity for better readability.
+Using Anne and Bill as an example, Anne only knows $p$ is true. She does not know if $p \land q$ or $p \land \neg q$, so she sees two worlds. Those two worlds are indistinguishable for Anne. Bill only knows $q$ is true, he does not know if $p \land q$ or $\neg p \land q$. One world where just the lever to the left is a goal, a world where another goal is the lever to the right and a world where just the lever to the right is a goal. Let $w_1$ be the world where just the lever to the left is a goal, $w_2$ be the world where the goal is the lever to the left or to the right and $w_3$ be the world where the goal is the lever to the right. Then $w_1 \sim_\text{Anne} w_2$ and $w_2 \sim_\text{Bill} w_3$. A graphic representation of this would be the global state $s = (\mathcal{M}, w_2)$ with the nodes representing the worlds and the edges representing the indistinguishably relation. The circle around a node represent designated worlds. In all graphic representations in this thesis we usually omit reflexive edges and edges that can be implied by transitivity for better readability.
 \[
 s=
 \begin{tikzpicture}
@@ -288,7 +288,7 @@ If all agents have one strong policy in common which all of them follow, then at
 
 
 
-The cost of a a policy can be defined as its worst-case execution length, the number of actions in its longest possible execution. An optimal policy is one with minimal costs. Due to partial observability and different knowledge, the agents might assign different costs to the same policy and therefore the costs are subjective. \\
+The cost of a policy can be defined as its worst-case execution length, the number of actions in its longest possible execution. An optimal policy is one with minimal costs. Due to partial observability and different knowledge, the agents might assign different costs to the same policy and therefore the costs are subjective. \\
 Let $\pi$ be a strong policy for a planning task $\Pi$. The perspective-sensitive cost (or simply cost) of $\pi$ from a state $s\in Dom(\pi)$, denoted $\kappa_{\pi}(s)$ is defined as:
 $$\kappa_{\pi}(s) =
 \begin{cases}

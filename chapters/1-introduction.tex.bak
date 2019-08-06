@@ -5,7 +5,7 @@ How would a perfect execution order look?
 \todo{What is an execution order?}
 \todo{Who are the agents?}
 
-This thesis is trying to answer that question by looking at the different execution orders. In other pieces of writing \todo{which?} about epistemic planning the execution order is ofthen unspecified, called an asynchronous execution order. This is easier to describe mathematically, but it also has some drawbacks. We are now going to have a look at the different execution orders, especially at the token based execution order.
+This thesis is trying to answer that question by looking at the different execution orders. In other works \todo{which?} about epistemic planning the execution order is often unspecified, called an asynchronous execution order. This is easier to describe mathematically, but it also has some drawbacks. We are now going to have a look at the different execution orders, especially at the token based execution order.
 
 There are four different execution modes that are possible:
 \begin{enumerate}
@@ -13,12 +13,12 @@ There are four different execution modes that are possible:
     The agents move in a seemingly random order.
   \item Concurrent \\
     The agents can act at the same time.
-  \item token based \\
+  \item Token Based \\
     The agents need a special token to be able to act, only one agent has the token at a time.
-  \item round robin \\
+  \item Round Robin \\
     The agents act one agent after the other, after the last agent is done they begin with the first agent again.
 \end{enumerate}
-We have found that the token based orders are a subset of the asynchronous orders, because all token based orders can also be ``a random'' asynchronous order, but not all asynchronous orders are a token based order. Also all round robin orders can be token based orders by accident, but not all token based orders are a round robin order.
+We have found that the token based orders are a subset of the asynchronous orders, because all token based orders can also be executed in ``a random'' asynchronous order, but not all asynchronous orders are a token based order. Also all round robin orders can be token based orders \todo{BY ACCIDENT??? or do you mean incidentally} by accident, but not all token based orders are a round robin order.
 Because of this we only looked at token based orders in this thesis.
 
 %\extend{How old is epistemic planning?}
@@ -34,7 +34,7 @@ There are multiple ways this research could be used in the future, in the real w
 %später dann auf Anwendung eingehen,
 %Beispiel mit vier autos an einer Kreuzung, brauchen token
 
-``Many applications, such as robotic warehouses, must coordinate a large number of agents somultaneausly to carry out theis specific tasks.'' This problem is usually described as the multi-agent path finding problem.
+``Many applications, such as robotic warehouses, must coordinate a large number of agents simultaneously to carry out this specific tasks.'' This problem is usually described as the multi-agent path finding problem.
 
 The thought of researching if a different order solves some problems is also done in multi agent path finding problems. Here, the problem gets more complex the more agents there are and it is very similar to the del approach.
 
