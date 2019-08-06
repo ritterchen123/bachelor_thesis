@@ -8,24 +8,24 @@
 %This thesis is trying to answer that question by looking at the different execution orders. In other pieces of writing \todo{which?} about epistemic planning the execution order is often unspecified, called an asynchronous execution order. This is easier to describe mathematically, but it also has some drawbacks. We are now going to have a look at the different execution orders, especially at the token based execution order.
 
 
-Implicit coordination is a multi-agent system in which the agents try to collaboratively reach a joint goal. The knowledge and abilities needed to reach a goal can be distributed among the agents. With no centralized coordination instance, the agents now need to plan individually and execute their decentralized plan.
+Implicit coordination is a technique for planning and coordination of multi-agent systems in which the agents try to collaboratively reach a joint goal. The knowledge and abilities needed to reach a goal can be distributed among the agents. With no centralized coordination instance, the agents now need to plan individually and decentrally execute their plans.
 
 
 %\extend{How old is epistemic planning?}
-The field of epistemic dynamic logic is relatively young. It started with the work from Plaza (1989) \cite{plaza1989logics} about ``Logics of public communications''.
-Epistemic planning is taking regular planning task and enriching it with knowledge and belief. In regular planning, the world is simplified, so that everyone knows everything there is to know about that particular microverse. But this is only a very simplified model of the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations and beliefs on that world. To model that, we use epistemic logic. To show that the agents each have different knowledge that can change over time, we describe the logic as being dynamic.
+The field of dynamic epistemic logic is relatively young. It started with the work from Plaza \cite{plaza1989logics} about ``Logics of public communications''.
+\todo{
+Epistemic planning is taking regular planning task and enriching it with knowledge and belief}
+Epistemic planning investigates techniques and tools of automated planning with formal semantics of communicative actions and knowledge representation.
+In regular planning, the world is simplified, so that everyone knows everything there is to know about that particular microverse. But this is only a very simplified model of the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations and beliefs on that world. To model that, we use epistemic logic. To show that the agents each have different knowledge that can change over time, we describe the logic as being dynamic.
 
-With the asynchronous execution order, every agent could intervene in the execution order at any time. This can potentially harm the execution and prevent the agents from reaching a goal. For example, if two agents have opposing goals, then one agent would always undo the actions of the other agent.
-To prevent this from happening, we want the agents to be able to decide their own execution order. Therefore, an agent should be able to specify the next agent. To model this, we used a token that the agents can pass on to the next agent. Only an agent with the token gets to act.
+With the asynchronous execution order, every agent can intervene in the execution order at any time. This can potentially harm the execution and prevent the agents from reaching a goal. For example, if two agents have opposing goals with no knowledge about the other agents' goal and the common goal is to reach one of those goals, then one agent would always undo the actions of the other agent.
 
+To prevent this from happening, we want to exclude all agents except for the acting agent from taking action. The acting agent should also be able to specify the next acting agent. To model this, we used a token that the acting agent can pass on to the next agent. Only an agent with the token  is allowed to participate.
 
-%\extend{How old is epistemic planning?}
-The field of dynamic epistemic logic is relatively young. It started with the work from Plaza (1989) \cite{plaza1989logics} about ``Logics of public communications''.
-Epistemic planning is a generalization of a classical planning task with knowledge and belief. In regular planning, the world is simplified, so that everyone knows everything there is to know about that particular microverse. But this is only a very simplified model of the real world. In the real world, agents often have only little knowledge and can therefore make only limited calculations and beliefs on that world. To model that, we use epistemic logic. Because with a modification of this logic we are also able to model different knowledge for the agents and knowledge changes, we describe this resulting logic as being dynamic.
 
 %\extend{What is the future of epistemic planning?}
-
-There are multiple ways this research could be used in the future, in the real world. One example is in autonomous driving. Two cars are standing across from each other on a bridge, only one car can pass. This problem could be solved with tokens.
+%\todo{
+%There are multiple ways this research could be used in the future, in the real world. One example is in autonomous driving. Two cars are standing across from each other on a bridge, only one car can pass. This problem could be solved with tokens.}
 
 %\extend{Why is this research relevant?}
 %Autonomous driving, zusammenbrechen der kommunikation

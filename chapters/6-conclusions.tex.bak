@@ -1,6 +1,7 @@
 \chapter{Conclusion}\label{chap:conclusion}
 
-We looked at how the two different token orders solved the two main problems: Deadlocks and infinite executions. We discussed that there are three different ways to introduce a token and all except the takle token solve both problems. The table token does not solve the deadlock problem because there is the possibility that no agent takes the token off the table. This is illustrated in the following table:
+We looked at how the two different token orders solved the two main problems: Deadlocks and infinite executions. We discussed that there are three different ways to introduce a token and all except the table token solve both problems. The table token does not solve the deadlock problem because there is the possibility that no agent takes the token off the table. This is illustrated in the following table:
+
 
 \begin{table}[h!]
 \centering
@@ -8,16 +9,14 @@ We looked at how the two different token orders solved the two main problems: De
 \begin{tabular}{|l|l|l|l|}
 \hline
  & table token & random token & give token \\ \hline
-empower token & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ doesn't solve deadlocks\end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ solves deadlocks\end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ solves deadlocks\end{tabular} \\ \hline
-force action token & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ doesn't solve deadlocks\end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ solves deadlocks\end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ solves deadlocks\end{tabular} \\ \hline
+empower token & \begin{tabular}[c]{@{}l@{}}solves infinite executions \\ $\longrightarrow$ Proposition 1 \\ doesn't solve deadlocks\end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ $\longrightarrow$ Proposition 1 \\ solves deadlocks \\ $\longrightarrow$ Proposition 4 \end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ $\longrightarrow$ Proposition 1 \\ solves deadlocks \\ $\longrightarrow$ Proposition 4 \end{tabular} \\ \hline
+force action token & \begin{tabular}[c]{@{}l@{}}solves infinite executions \\ $\longrightarrow$ Proposition 2 \\ doesn't solve deadlocks\end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ $\longrightarrow$ Proposition 2 \\ solves deadlocks \\ $\longrightarrow$ Proposition 3  \end{tabular} & \begin{tabular}[c]{@{}l@{}}solves infinite executions\\ $\longrightarrow$ Proposition 2 \\ solves deadlocks \\ $\longrightarrow$ Proposition 3 \end{tabular}  \\ \hline
 \end{tabular}%
 }
 \end{table}
 
 This means that there are positive results with the introduction of a token based order. In every case, if an agent that has found a plan gets the token, the goal will be reached in a finite number of steps.
 
-Eager agents können weggelassen werden weil man mit Kosten gleich 1 die deadlocks und die infinite executions in den meisten fällen lösen kann. Mit den force tokens können die lazy agenten zu sachen gezwungen werden, es ist also egal ob die agents eager, overeager oder lazy sind.
-
-For future work, the way the token changes the searching of a plan should be researched. The searchtree of a plan might get a smaller width but also a deeper depth.\\
+For future work, the way the token changes the search of a plan should be researched. With Tokens, the search tree of a plan might have a smaller width because the agents can be prevented from acting. The tree will also have a deeper depth becuase the agents each have a new action of handing the token to the next player.\\
 There could also be future research in researching the fairness of the tokens. How do the tokens get passed from player to player and if that is fair. \\
-Another field of research for the future could be impatient players and the table token execution order. An impatient player will wait for the other player to take the token first, but only for a limited amout of time.
+Another field of research for the future could be impatient players and the table token execution order. An impatient player will wait for the other player to take the token first, but only for a limited amount of time. For this we would need to extend the formalism since we cannot model time or a waiting agent explicitly.

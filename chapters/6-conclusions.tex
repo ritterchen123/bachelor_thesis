@@ -17,6 +17,8 @@ force action token & \begin{tabular}[c]{@{}l@{}}solves infinite executions \\ $\
 
 This means that there are positive results with the introduction of a token based order. In every case, if an agent that has found a plan gets the token, the goal will be reached in a finite number of steps.
 
-For future work, the way the token changes the search of a plan should be researched. With Tokens, the search tree of a plan might have a smaller width because the agents can be prevented from acting. The tree will also have a deeper depth becuase the agents each have a new action of handing the token to the next player.\\
+For future work, the way the token changes the search of a plan should be researched. With Tokens, the search tree of a plan might have a smaller width because the agents can be prevented from acting. The tree will also have a deeper depth because the agents each have a new action of handing the token to the next player.\\
+We also did not look at how a tokenized planning task changes the existence of i-strong policies. Could some planning problems become unsolvable through the tokenize function?
+
 There could also be future research in researching the fairness of the tokens. How do the tokens get passed from player to player and if that is fair. \\
 Another field of research for the future could be impatient players and the table token execution order. An impatient player will wait for the other player to take the token first, but only for a limited amount of time. For this we would need to extend the formalism since we cannot model time or a waiting agent explicitly.

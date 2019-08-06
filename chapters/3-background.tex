@@ -10,7 +10,8 @@ With the asynchronous execution order this task could be easily finished if Anne
 \section{Dynamic Epistemic Logic}
 In the following we will define and explain the core concepts of the Dynamic Epistemic Logic (DEL). DEL is a specific mathematical language used as the framework of this thesis.
 
-The definitions are taken from the ``Better eager than lazy'' (2018) \cite{bolander2018better} paper, the ``A gentle introduction to DEL'' (2017) \cite{bolander2017gentle} and the book ``Dynamic epistemic logic'' from Ditmarsch \cite{Ditmarsch2007}.
+\todo{richtig zitieren}
+The definitions are taken from the ``Better eager than lazy'' \cite{bolander2018better} paper, the ``A gentle introduction to DEL'' \cite{bolander2017gentle} and the book ``Dynamic epistemic logic'' from Ditmarsch \cite{Ditmarsch2007}.
 
 Let $\mathcal{A}$ be a finite set of agents, from the example above this would be $\mathcal{A} =\{$Anne, Bill$\}$. Let $\mathcal{P}$ be a finite set of atomic propositions. Atomic propositions, like $p$ or $q$, describe some affairs that can be true or false.
 The epistemic language $\mathcal{L}_{\text{KC}}$ is: \\
@@ -32,7 +33,7 @@ with the domain $W$ being a nonempty finite set of worlds,
 $\sim_i$ being an equivalence relation called the indistinguishably relation for agent $i \in \mathcal{A}$ and $V : P \rightarrow \mathcal{P}(W)$ assigning a valuation to each atomic proposition.
 
 
-Using Anne and Bill as an Example, Anne only knows $p$ is true. She does not know if $p,q$ or $p, \neg q$, so she sees two worlds. Those two worlds are indistinguishable for Anne. Bill only knows $q$ is true, he does not know if $p,q$ or $\neg p,q$. One world where just the lever to the left is a goal, a world where another goal is the lever to the right and a world where just the lever to the right is a goal. Let $w_1$ be the world where just the lever to the left is a goal, $w_2$ be the world where the goal is the lever to the left or to the right and $w_3$ be the world where the goal is the lever to the right. Then $w_1 \sim_\text{Anne} w_2$ and $w_2 \sim_\text{Bill} w_2$. A graphic representation of this would be the global state $s = (\mathcal{M}, w_2)$ with the nodes representing the worlds and the edges representing the indistinguishably relation. The circle around a node represent designated worlds.
+Using Anne and Bill as an Example, Anne only knows $p$ is true. She does not know if $p$ and $q$ or $p$ and not $q$, so she sees two worlds. Those two worlds are indistinguishable for Anne. Bill only knows $q$ is true, he does not know if $p,q$ or $\neg p,q$. One world where just the lever to the left is a goal, a world where another goal is the lever to the right and a world where just the lever to the right is a goal. Let $w_1$ be the world where just the lever to the left is a goal, $w_2$ be the world where the goal is the lever to the left or to the right and $w_3$ be the world where the goal is the lever to the right. Then $w_1 \sim_\text{Anne} w_2$ and $w_2 \sim_\text{Bill} w_2$. A graphic representation of this would be the global state $s = (\mathcal{M}, w_2)$ with the nodes representing the worlds and the edges representing the indistinguishably relation. The circle around a node represent designated worlds. In all graphic representations in this thesis we usually omit reflexive edges and edges than can be implied by transivity for better readability.
 \[
 s=
 \begin{tikzpicture}
@@ -51,7 +52,7 @@ A state $(\mathcal{M}, W_d)$ is called a local state for agent $i$ if $W_d$ is c
 Given a state $s=(\mathcal{M}, W_d)$ the associated local state of agent $i$, denoted $s^i$, is $(\mathcal{M},\{v|v\sim _i w \text{ and } w \in W_d\})$. Going from $s$ to $s^i$ amounts to a \textit{perspective shift} to the local perspective of agent $i$.
 
 
-From the example above, Anne has the local state $(\mathcal{M},\{w_1,w_2\})$ and Bill has the local state $(\mathcal{M},\{w_2,w_3\})$.
+In the example above, Anne has the local state $s^{\text{Anne}}=(\mathcal{M},\{w_1,w_2\})$ and Bill has the local state $s^{\text{Bill}}=(\mathcal{M},\{w_2,w_3\})$.
 
 
 Let $(\mathcal{M}, W_d)$ be a state on $P,\mathcal{A}$ with $\mathcal{M}=(W, (\sim_i)_{i \in \mathcal{A}}, V)$. For $i \in \mathcal{A}$, $p \in P$ and $\varphi, \psi \in \mathcal{L}_{\text{KC}}(P,\mathcal{A})$, we define truth as follows:
@@ -84,7 +85,7 @@ Let $(\mathcal{M}, W_d)$ be a state on $P,\mathcal{A}$ with $\mathcal{M}=(W, (\s
 where $\sim^*$ is the transitive closure of $\bigcup_{i \in \mathcal{A}}\sim_i$.
 
 
-From the example above, in $(M,w_2)$, $w_2$ is the designated world. This designated world says nothing about the knowledge of Anne. She still does not know if $q$ is true or not. $(M,w_2) \models \neg K_aq \vee \neg K_a \neg q$.
+From the example above, in $(M,w_2)$, $w_2$ is the designated world. In this designated world, Anne still does not know if $q$ is true or not. $(M,w_2) \models \neg K_aq \wedge \neg K_a \neg q$.
 Performing a perspective sift on $s=(M,w_2)$ for Anne is $(M,w_2)^{\text{Anne}} =(M,\{w_1,w_2\})$. This perspective shift gives us $(M,\{w_1,w_2\})\not\models q$ and $(M,\{w_1,w_2\})\not\models \neg q$. This way, we can verify that the knowledge from the global world for an agent by performing a perspective shift for that agent.
 
 
@@ -108,10 +109,9 @@ then the product update of $s$ with $a$ is defined as $s \otimes a = ((W',(\sim_
    $W'=\{(w,e)\in W \times E ~|~ \mathcal{M}, w \models pre(e)\};$
    \item new worlds are indistinguishable if the old worlds and the events are indistinguishable \\
    $\sim_i'=\{((w,e),(w',e')) \in W'\times W' ~|~ w \sim_i w' \text{ and } e \sim_i e'\};$
-   \item propositions become true if the proposition occurred as a positive literall in the effect of the event or the proposition was satisfied in the world before and did not appear negative in the effect \\
+   \item propositions become true if the proposition occurred as a positive literal in the effect of the event or the proposition was satisfied in the world before and did not appear negative in the effect \\
    $V'(p) = \{ (w,e) \in W' ~|~ \textit{eff}(e) \models p \text{ or } (\mathcal{M},w \models p \text{ and } \textit{eff}(e)\not \models \neg p)\};$
-   \item worlds are designated if both predecessor world and event are designated.
-   emerge from designated predecessor worlds and designated events \\
+   \item worlds are designated if both predecessor world and event are designated. \\
    $W_d' = \{ (w,e) \in W' ~|~ w \in W_d \text{ and } e \in E_d\}$.
  \end{itemize}
 
@@ -175,17 +175,17 @@ There are tow types of actions that could be performed to solve this problem:
     ~\otimes~
     %
     \begin{tikzpicture}
-      \draw (-2,0) node[world, label=below:{$e_1: \langle \top, qR \rangle $}] (e1) {};
+      \draw (-2,0) node[world, label=below:{$e_1: \langle qR, \top \rangle $}] (e1) {};
       \draw (0,0) node [desig] {}; % designation
-      \draw (0,0) node[world, label=below:{$e_2: \langle \top, qR \rangle $}] (e2) {};
-      \draw (e1) -- node[above] {Max} (e2);
+      \draw (0,0) node[world, label=below:{$e_2: \langle \neg qR, \top \rangle $}] (e2) {};
     \end{tikzpicture}
     %
     ~=~
     %
     \begin{tikzpicture}
-      \draw (0,0) node [desig] {};
-      \draw (0,0) node[world, label=below:{$(w_2, e_1): qR$}] (w1e1) {};
+      \draw (-2,0) node[world, label=below:{$w_1: \neg qR$}] (w1) {};
+      \draw (0,0) node [desig] {}; % designation
+      \draw (0,0) node[world, label=below:{$w_2: qR$}] (w2) {};
     \end{tikzpicture}
     \]
 
@@ -198,7 +198,7 @@ There are tow types of actions that could be performed to solve this problem:
 
 A planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$ consists of a global state $s_0$ called the \textit{initial state}; a finite set of actions A; an owner function $\omega: A \rightarrow \mathcal{A}$; and a \textit{goal formula} $\gamma \in \mathcal{L}_{KC}$.
 
-Consider a verson of the lever problem from before. For simplicity, in this example there is only one player and the lever can only be pulled once. The planning task $\langle s_0, \{ a_1 \} , \omega, p \rangle$ consists of the initial state $s_0 = $
+Consider a version of the lever problem from before. For simplicity, in this example there is only one player and the lever can only be pulled once. The planning task $\langle s_0, \{ a_1 \} , \omega, p \rangle$ consists of the initial state $s_0 = $
 \begin{tikzpicture}
   \draw (0,0) node [desig] {}; % designation
   \draw (0,0) node[world, label=below:{$\neg p$}] (w1) {};
@@ -241,8 +241,9 @@ A policy $\pi$ for $\Pi = \langle s_0, A, \omega, \gamma \rangle$ is a partial m
     If the policy $\pi$ prescribes some action $a$ to agent $i$ in state $s$ and agent $i$ cannot distinguish $s$ from some other state $t$, then $\pi$ has to prescribe the same action $a$ for $i$ in $t$ as well: \\
     for all $s,t \in S^{gl} $ such that $ s^{\omega(a)} = t^{\omega(a)}, a \in \pi(s): a \in \pi(t)$
 
+    A planning task with the agents Lea and Max,
+    initial state Lea puts two cards face down on the table, one of them is a queen, the other a king. Max does not know if the queen is on the left or the right side. The goal is that Max turns over the queen. Max has two actions, he can either turn over the left card or the right card. The policy in which Max turns over the left card is a valid policy because even though he does not know if that card is the queen, the action is perscribed in both cases.
 
-    In the planning task between Lea and Max, a policy that perscribes him to pick up the queen right after Lea put down the cards is not a valid policy.
 
   \item Determinism \\
     We require $\pi$ to be unambiguous for all agents in the sense that in each state $s$ where an agent $i$ is supposed to act according to $\pi$, $\pi$ will always prescribe the same action for agent $i$.
@@ -261,11 +262,11 @@ An execution is called successful for a planning task $\Pi = \langle s_0, A, \om
 
 %\extend{Example: Anna lets Bill pull the lever to the right. Globally this makes sense, since that is Bills goal. But individually, this makes no sense at all because Anne doesent know Bills goal.}
 
-In the lever example, a policy could be that, starting in the position with the lever being in the middle, Bill pulls the lever to the right and then to the right again. This is a policiy that satisfies all properties and where the last state satisfies the goal formula. The execution of the policy is finite and successful. \\
+In the lever example, a policy could be that, starting in the position with the lever being in the middle, Bill pulls the lever to the right and then to the right again. This is a policy that satisfies all properties and where the last state satisfies the goal formula. The execution of the policy is finite and successful. \\
 For Bill, this is a reasonable policy. It satisfies the goal formula he knows to be true, with the lever being at the far right position. But for Anne, it is not a reasonable policy because she can not see that the execution of this policy will satisfy the goal formula.
 
 %\todo{Geht das hier etwas schöner?}
-We now want to restrict our focus to policies that are guaranteed to achieve the goal after a finite number of steps. More formally, all of their executions must be successful. As in nondeterministic planning, such policies are called strong (Cimatti et al. 2003 \cite{cimattietal}).
+We now want to restrict our focus to policies that are guaranteed to achieve the goal after a finite number of steps. More formally, all of their executions must be successful. As in nondeterministic planning, such policies are called strong (Cimatti et al. \cite{cimattietal}).
 For a planning task $\Pi = \langle s_0, A, \omega, \gamma \rangle$, a policy $\pi$ is called strong if $s_0 \in \text{Dom}(\pi) \cup \{s \in S^{gl} ~|~ s \models \gamma\}$ and for each $s \in \text{Dom}(\pi)$, any execution of $\pi$ from $s$ is successful for $\Pi$. A planning task is called solvable if a strong policy for $\Pi$ exists.
 For $ i \in \mathcal{A} $ , we call a policy $i$-strong if it is strong and  $Globals(s_0^i ) \subseteq \text{Dom}(\pi) \cup\{ s \in S^{gl} ~|~ s \models \gamma \}$.
 
@@ -273,7 +274,7 @@ When a policy is i-strong it means that the policy is strong and defined on all 
 
 The policy from above, with Bill pulling the lever to the right twice is Bill-strong but not Anne-strong.
 
-Sometimes the agents cannot coordinate their plans but rather have to come up with plans individually. These plans can differ a lot, the agents ofthen have different knowledge about the states, the actions and therefore the action outcomes. For this reason we will define a policy profile for a planning task $\Pi$ to be a family $(\pi_i)_{i \in \mathcal{A}}$ where each $\pi_i$ is a policy for $\Pi$. We assume actions to be instantaneous and executed asynchronously. This leads to the following generalization:
+Sometimes the agents cannot coordinate their plans but rather have to come up with plans individually. These plans can differ a lot, the agents often have different knowledge about the states, the actions and therefore the action outcomes. For this reason we will define a policy profile for a planning task $\Pi$ to be a family $(\pi_i)_{i \in \mathcal{A}}$ where each $\pi_i$ is a policy for $\Pi$. We assume actions to be instantaneous and executed asynchronously. This leads to the following generalization:
 
 An execution of a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a maximal (finite or infinite) sequence of alternating global states and actions $(s_0, a_1, s_1,...)$, such that for all $m \leq 0$,
 \begin{enumerate}
@@ -286,10 +287,10 @@ An execution of a policy profile $(\pi_i)_{i \in \mathcal{A}}$ is a maximal (fin
 
 If all agents have one strong policy in common which all of them follow, then at execution time, the goal is guaranteed to be eventually reached. If, however, each agent acts on its individual strong policy, then the incompatibility of the individual policies may prevent the agents from reaching the goal, even tough each individual policy is strong.
 
- 
 
-The cost of a apolicy can be defined as its worst-case execution length, the number of actions in its longest possible execution. An optimal policy in one with minimal costs. Due to partial observability and different knowledge, the agents might assign different costs to the same policy and therefore the costs are subjective. \\
-Let $\pi$ be a strong policy for a planning task $\Pi$. The perspecitve-sensitive cost (or simply cost) of $\pi$ from a state $s\in Dom(\pi)$, denoted $\kappa_{\pi}(s)$ is defined as:
+
+The cost of a a policy can be defined as its worst-case execution length, the number of actions in its longest possible execution. An optimal policy is one with minimal costs. Due to partial observability and different knowledge, the agents might assign different costs to the same policy and therefore the costs are subjective. \\
+Let $\pi$ be a strong policy for a planning task $\Pi$. The perspective-sensitive cost (or simply cost) of $\pi$ from a state $s\in Dom(\pi)$, denoted $\kappa_{\pi}(s)$ is defined as:
 $$\kappa_{\pi}(s) =
 \begin{cases}
 0 \qquad \text{if there exists no } a \in \pi(s)\\

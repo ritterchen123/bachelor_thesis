@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  6 AUG 2019 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.1)  6 AUG 2019 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1375,33 +1375,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
 
  <./figures/pictures/Hebelbild.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
 [6] [7] [8]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 107.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 108.
 
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 107.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 108.
  [9] [10] [11] [12]
 [13]) (./chapters/4-approach.tex [14]
 chapter 4.
 [15
 
 
-] [16] [17] [18] (./figures/pictures/dishwasher.tex
-<figures/pictures/dishwasher.png, id=207, 184.43906pt x 252.945pt>
+]
+Overfull \hbox (1.94032pt too wide) in paragraph at lines 34--43
+\T1/lmr/bx/n/10.95 wer-den. )[][][] $\OML/lmm/m/it/10.95 s[] \OT1/lmr/m/n/10.95
+ (-20) = \OML/lmm/m/it/10.95 s[] \OMS/lmsy/m/n/10.95 [ :\OML/lmm/m/it/10.95 has
+Token[]$\T1/lmr/m/n/10.95 (-20) . $\OML/lmm/m/it/10.95 V[]\OT1/lmr/m/n/10.95 (-
+20) (\OML/lmm/m/it/10.95 hasToken[]\OT1/lmr/m/n/10.95 (-20) ) = \OMS/lmsy/m/n/1
+0.95 ; 8\OML/lmm/m/it/10.95 i \OMS/lmsy/m/n/10.95 2
+ []
+
+[16] [17] [18] (./figures/pictures/dishwasher.tex
+<figures/pictures/dishwasher.png, id=208, 184.43906pt x 252.945pt>
 File: figures/pictures/dishwasher.png Graphic file (type png)
 <use figures/pictures/dishwasher.png>
 Package pdftex.def Info: figures/pictures/dishwasher.png  used on input line 3.
 
 (pdftex.def)             Requested size: 55.33214pt x 75.88408pt.
 ) [19 <./figures/pictures/dishwasher.png>]
-Overfull \hbox (3.17805pt too wide) in paragraph at lines 113--126
+Overfull \hbox (3.17805pt too wide) in paragraph at lines 115--128
 \T1/lmr/m/n/10.95 (-20) if $\OML/lmm/m/it/10.95 a \OT1/lmr/m/n/10.95 (-20) = \O
 MS/lmsy/m/n/10.95 h\OML/lmm/m/it/10.95 pre; []\OMS/lmsy/m/n/10.95 i$\T1/lmr/m/n
 /10.95 (-20) , then $\OML/lmm/m/it/10.95 tokenize \OMS/lmsy/m/n/10.95 ^^@ \OML/
@@ -1411,7 +1420,7 @@ lmm/m/it/10.95 force\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n
  []
 
 
-Overfull \hbox (13.36005pt too wide) in paragraph at lines 113--126
+Overfull \hbox (13.36005pt too wide) in paragraph at lines 115--128
 \T1/lmr/m/n/10.95 (-20) Moreover: $\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 (-
 20) (\OML/lmm/m/it/10.95 tokenize \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 f
 orce\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n/10.95 (-20) )) 
@@ -1423,7 +1432,7 @@ m/it/10.95 ![]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 giveToken[]\OT1/lmr
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--126
+Underfull \hbox (badness 10000) in paragraph at lines 115--128
 
  []
 
@@ -1445,11 +1454,11 @@ Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38600 strings out of 494435
- 703168 string characters out of 6173464
+ 38614 strings out of 494435
+ 703292 string characters out of 6173464
  1032694 words of memory out of 5000000
- 41485 multiletter control sequences out of 15000+600000
- 619984 words of font info for 157 fonts, out of 8000000 for 9000
+ 41489 multiletter control sequences out of 15000+600000
+ 620186 words of font info for 160 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  67i,21n,77p,9237b,766s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
@@ -1466,10 +1475,10 @@ m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
 y10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmsy8.pfb>
-Output written on out/thesis_main.pdf (39 pages, 367637 bytes).
+Output written on out/thesis_main.pdf (39 pages, 370565 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 321 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 389 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 95 named destinations out of 1000 (max. 500000)
  23663 words of extra memory for PDF output out of 24883 (max. 10000000)
 
